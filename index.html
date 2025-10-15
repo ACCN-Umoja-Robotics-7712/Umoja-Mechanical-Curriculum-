@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umoja 7712 FRC Robotics - Mechanical Engineering LMS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="lms-header">
+        <div class="container">
+            <div class="logo-section">
+                <div class="team-logo">
+                    <img src="umoja-logo.png" alt="Umoja 7712 FRC Robotics Team Logo" class="logo-image">
+                    <div class="team-info">
+                        <h1>Umoja 7712 FRC Robotics</h1>
+                        <p>Mechanical Engineering Curriculum</p>
+                    </div>
+                </div>
+            </div>
+            <div class="user-info">
+                <span>👤 Student Portal</span>
+                <div class="progress-indicator">
+                    <span id="overall-progress">Progress: 0/7 Weeks</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#dashboard" class="nav-link active" onclick="showSection('dashboard')">📊 Dashboard</a></li>
+                <li><a href="#lessons" class="nav-link" onclick="showSection('lessons')">📚 Lessons</a></li>
+                <li><a href="#quizzes" class="nav-link" onclick="showSection('quizzes')">🧠 Quizzes</a></li>
+                <li><a href="#resources" class="nav-link" onclick="showSection('resources')">📋 Resources</a></li>
+                <li><a href="#forum" class="nav-link" onclick="showSection('forum')">💬 Forum</a></li>
+                <li><a href="#assessments" class="nav-link" onclick="showSection('assessments')">✅ Assessments</a></li>
+                <li><a href="#calendar" class="nav-link" onclick="showSection('calendar')">📅 Calendar</a></li>
+                <li><a href="#instructor" class="nav-link" onclick="showSection('instructor')">👨‍🏫 Instructor</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="content-section active">
+            <!-- Hero Section with Umoja Logo -->
+            <div class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-logo">
+                        <img src="umoja-logo.png" alt="Umoja 7712 FRC Robotics Team" class="hero-logo-image">
+                    </div>
+                    <div class="hero-text">
+                        <h1>Welcome to Umoja 7712</h1>
+                        <h2>Mechanical Engineering Excellence</h2>
+                        <p class="hero-subtitle">Building Champions Through Engineering Education</p>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-icon">🏆</span>
+                                <span class="stat-text">Championship Mindset</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-icon">🔧</span>
+                                <span class="stat-text">Professional Skills</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-icon">🌍</span>
+                                <span class="stat-text">Global Impact</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>📊 Learning Dashboard</h2>
+            
+            <div class="dashboard-grid">
+                <div class="card progress-card umoja-accent-card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Your Engineering Journey</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <p><span id="completed-lessons">0</span> of 7 weeks completed</p>
+                    <div class="next-lesson">
+                        <strong>Next Challenge:</strong> <span id="next-lesson">Week 1 - Safety & Tools</span>
+                        <br><strong>Date:</strong> October 25, 2024
+                    </div>
+                </div>
+
+                <div class="card announcements-card umoja-secondary-card">
+                    <div class="card-icon">📢</div>
+                    <h3>Team Announcements</h3>
+                    <div class="announcement">
+                        <strong>🏆 Welcome to Umoja 7712!</strong><br>
+                        Begin your championship journey with our comprehensive safety protocols.
+                    </div>
+                    <div class="announcement">
+                        <strong>🔧 Preparation Notice:</strong><br>
+                        Safety glasses required starting Week 3 - Engineering mindset starts now!
+                    </div>
+                    <div class="announcement">
+                        <strong>🌍 Ubuntu Philosophy:</strong><br>
+                        "I am because we are" - Together we build champions!
+                    </div>
+                </div>
+
+                <div class="card quick-access-card umoja-primary-card">
+                    <div class="card-icon">🚀</div>
+                    <h3>Launch Your Journey</h3>
+                    <div class="quick-buttons">
+                        <button class="btn btn-primary" onclick="startCurrentLesson()">🎯 Begin Current Lesson</button>
+                        <button class="btn btn-secondary" onclick="showSection('resources')">🛡️ Safety Protocols</button>
+                        <button class="btn btn-secondary" onclick="showSection('calendar')">📅 Training Schedule</button>
+                    </div>
+                    <div class="umoja-quote">
+                        <em>"Excellence is never an accident. It is always the result of high intention, sincere effort, and skillful execution."</em>
+                    </div>
+                </div>
+
+                <div class="card achievements-card umoja-gold-card">
+                    <div class="card-icon">🏆</div>
+                    <h3>Championship Milestones</h3>
+                    <div class="achievements">
+                        <div class="achievement locked" id="achievement-1">🔧 Safety Champion</div>
+                        <div class="achievement locked" id="achievement-2">📐 Precision Engineer</div>
+                        <div class="achievement locked" id="achievement-3">⚙️ Mechanism Master</div>
+                        <div class="achievement locked" id="achievement-4">🏗️ Systems Integrator</div>
+                        <div class="achievement locked" id="achievement-5">🤖 Robot Builder</div>
+                        <div class="achievement locked" id="achievement-6">🏆 FRC Champion</div>
+                    </div>
+                    <div class="achievement-progress">
+                        <small>Unlock achievements as you complete each week's challenges!</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lessons Section -->
+        <section id="lessons" class="content-section">
+            <h2>📚 Course Lessons</h2>
+            
+            <div class="lessons-grid">
+                <div class="lesson-card" data-week="1">
+                    <div class="lesson-status">🔓</div>
+                    <h3>Week 1 - October 25</h3>
+                    <h4>�️�🔧 Safety & Tools/Equipment Introduction</h4>
+                    <p>Essential workshop safety protocols and hands-on introduction to basic tools and measuring equipment</p>
+                    <div class="lesson-meta">
+                        <span>⏱️ 4-6 hours</span>
+                        <span>📋 Materials: Notebook, pencil, safety glasses</span>
+                    </div>
+                    <div class="lesson-actions">
+                        <button class="btn btn-primary" onclick="openInteractiveLesson(1)">Start Lesson</button>
+                        <button class="btn btn-outline" onclick="markComplete(1)">Mark Complete</button>
+                    </div>
+                </div>
+
+                <div class="lesson-card locked" data-week="2">
+                    <div class="lesson-status">🔒</div>
+                    <h3>Week 2 - November 1</h3>
+                    <h4>📏💻 Measurement & CAD Basics</h4>
+                    <p>Master precision measurement techniques and professional CAD modeling for championship-level design accuracy</p>
+                    <div class="lesson-meta">
+                        <span>⏱️ 4-6 hours</span>
+                        <span>📋 Materials: Calculator, calipers, CAD software</span>
+                    </div>
+                    <div class="lesson-actions">
+                        <button class="btn btn-primary" onclick="openInteractiveLesson(2)" style="display: none;" id="lesson2-start">Start Lesson</button>
+                        <button class="btn btn-disabled" disabled id="lesson2-locked">Complete Week 1 First</button>
+                        <button class="btn btn-outline" onclick="markComplete(2)" style="display: none;" id="lesson2-complete">Mark Complete</button>
+                    </div>
+                </div>
+
+                <div class="lesson-card locked" data-week="3">
+                    <div class="lesson-status">🔒</div>
+                    <h3>Week 3 - November 8</h3>
+                    <h4>🔩⚙️ Fasteners & Hardware</h4>
+                    <p>Master professional fastener selection, torque specifications, and assembly techniques for robust robot construction</p>
+                    <div class="lesson-meta">
+                        <span>⏱️ 4-6 hours</span>
+                        <span>📋 Materials: Safety glasses, torque wrench, fastener kit</span>
+                    </div>
+                    <div class="lesson-actions">
+                        <button class="btn btn-disabled" disabled>Complete Week 2 First</button>
+                    </div>
+                </div>
+
+                <div class="lesson-card locked" data-week="4">
+                    <div class="lesson-status">🔒</div>
+                    <h3>Week 4 - November 15</h3>
+                    <h4>⚙️🎯 Mechanisms & Motion</h4>
+                    <p>Design and build gear trains, linkages, and motion systems that bring championship robots to life</p>
+                    <div class="lesson-meta">
+                        <span>⏱️ 4-6 hours</span>
+                        <span>📋 Materials: Calculator, gear kit, mechanism samples</span>
+                    </div>
+                    <div class="lesson-actions">
+                        <button class="btn btn-disabled" disabled>Complete Week 3 First</button>
+                    </div>
+                </div>
+
+                <div class="lesson-card locked" data-week="5">
+                    <div class="lesson-status">🔒</div>
+                    <h3>Week 5 - November 22</h3>
+                    <h4>🏗️📐 Structural Design & Materials</h4>
+                    <p>Master structural analysis and materials engineering to build frames that withstand the most intense FRC competition forces</p>
+                    <div class="lesson-meta">
+                        <span>⏱️ 4-6 hours</span>
+                        <span>📋 Materials: Calculator, materials samples, testing equipment</span>
+                    </div>
+                    <div class="lesson-actions">
+                        <button class="btn btn-disabled" disabled>Complete Week 4 First</button>
+                    </div>
+                </div>
+
+                <div class="lesson-card locked" data-week="6">
+                    <div class="lesson-status">🔒</div>
+                    <h3>Week 6 - November 29</h3>
+                    <h4>🏭⚙️ Manufacturing & Assembly</h4>
+                    <p>Transform CAD designs into championship robots using professional manufacturing and assembly techniques</p>
+                    <div class="lesson-meta">
+                        <span>⏱️ 4-6 hours</span>
+                        <span>📋 Materials: Safety equipment, manufacturing tools, assembly fixtures</span>
+                    </div>
+                    <div class="lesson-actions">
+                        <button class="btn btn-disabled" disabled>Complete Week 5 First</button>
+                    </div>
+                </div>
+
+                <div class="lesson-card locked" data-week="7">
+                    <div class="lesson-status">🔒</div>
+                    <h3>Week 7 - December 6</h3>
+                    <h4>🏆🤖 Integration, Testing & Competition</h4>
+                    <p>Complete your transformation into an FRC champion with systems integration, testing protocols, and competition mastery</p>
+                    <div class="lesson-meta">
+                        <span>⏱️ 4-6 hours</span>
+                        <span>📋 Materials: Complete robot systems, test equipment, competition field</span>
+                    </div>
+                    <div class="lesson-actions">
+                        <button class="btn btn-disabled" disabled>Complete Week 6 First</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Lesson Viewer -->
+        <section id="lesson-viewer" class="content-section">
+            <div class="lesson-container">
+                <div class="lesson-header">
+                    <button class="btn btn-secondary" onclick="closeLessonViewer()">← Back to Lessons</button>
+                    <h2 id="lesson-title">Lesson Title</h2>
+                    <div class="lesson-progress-indicator">
+                        <span id="lesson-progress-text">Step 1 of 6</span>
+                        <div class="lesson-progress-bar">
+                            <div class="lesson-progress-fill" id="lesson-progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lesson-content-wrapper">
+                    <div class="lesson-sidebar">
+                        <h3>📋 Lesson Steps</h3>
+                        <div class="lesson-steps" id="lesson-steps">
+                            <!-- Steps will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="lesson-main-content" id="lesson-main-content">
+                        <!-- Lesson content will be loaded here -->
+                    </div>
+                </div>
+                
+                <div class="lesson-navigation">
+                    <button class="btn btn-secondary" id="prev-step-btn" onclick="previousStep()" disabled>← Previous</button>
+                    <button class="btn btn-primary" id="next-step-btn" onclick="nextStep()">Next →</button>
+                    <button class="btn btn-success" id="complete-lesson-btn" onclick="completeLessonFromViewer()" style="display: none;">Complete Lesson ✓</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quizzes Section -->
+        <section id="quizzes" class="content-section">
+            <h2>🧠 Knowledge Quizzes</h2>
+            
+            <div class="quiz-grid">
+                <div class="quiz-card" data-quiz="1">
+                    <h3>�️🔧 Week 1 Quiz: Safety & Tools</h3>
+                    <p>Test your knowledge of workshop safety protocols and basic tool identification</p>
+                    <div class="quiz-info">
+                        <span>❓ 7 questions</span>
+                        <span>⏱️ 12 minutes</span>
+                        <span class="quiz-status" id="quiz1-status">🔒 Complete Week 1 first</span>
+                    </div>
+                    <button class="btn btn-primary" onclick="startQuiz(1)" id="quiz1-btn" disabled>Start Quiz</button>
+                </div>
+
+                <div class="quiz-card" data-quiz="2">
+                    <h3>📏💻 Week 2 Quiz: Measurement & CAD</h3>
+                    <p>Master precision measurement and professional CAD modeling assessment</p>
+                    <div class="quiz-info">
+                        <span>❓ 15 questions</span>
+                        <span>⏱️ 25 minutes</span>
+                        <span class="quiz-status" id="quiz2-status">🔒 Locked</span>
+                    </div>
+                    <button class="btn btn-disabled" onclick="startQuiz(2)" id="quiz2-btn" disabled>Locked</button>
+                </div>
+
+                <div class="quiz-card" data-quiz="3">
+                    <h3>🔩⚙️ Week 3 Quiz: Fasteners</h3>
+                    <p>Professional fastener selection and assembly techniques assessment</p>
+                    <div class="quiz-info">
+                        <span>❓ 12 questions</span>
+                        <span>⏱️ 18 minutes</span>
+                        <span class="quiz-status" id="quiz3-status">🔒 Locked</span>
+                    </div>
+                    <button class="btn btn-disabled" onclick="startQuiz(3)" id="quiz3-btn" disabled>Locked</button>
+                </div>
+
+                <div class="quiz-card" data-quiz="4">
+                    <h3>⚙️🎯 Week 4 Quiz: Mechanisms</h3>
+                    <p>Master mechanism design and motion system engineering assessment</p>
+                    <div class="quiz-info">
+                        <span>❓ 18 questions</span>
+                        <span>⏱️ 30 minutes</span>
+                        <span class="quiz-status" id="quiz4-status">🔒 Locked</span>
+                    </div>
+                    <button class="btn btn-disabled" onclick="startQuiz(4)" id="quiz4-btn" disabled>Locked</button>
+                </div>
+            </div>
+
+            <!-- Quiz Modal -->
+            <div id="quiz-modal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 id="quiz-title">Quiz Title</h3>
+                        <span class="close" onclick="closeQuiz()">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="quiz-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="quiz-progress-fill"></div>
+                            </div>
+                            <span id="quiz-progress-text">Question 1 of 10</span>
+                        </div>
+                        <div id="quiz-content">
+                            <!-- Quiz questions will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="content-section">
+            <h2>📋 Learning Resources</h2>
+            
+            <div class="resources-grid">
+                <div class="resource-category">
+                    <h3>🛡️ Safety & Prerequisites</h3>
+                    <ul class="resource-list">
+                        <li><a href="Safety_Protocols.md" class="resource-link">📋 Safety Protocols (READ FIRST!)</a></li>
+                        <li><a href="Resources_Materials_List.md" class="resource-link">📦 Materials & Tools List</a></li>
+                        <li><a href="Assessment_Framework.md" class="resource-link">📊 Assessment Guidelines</a></li>
+                    </ul>
+                </div>
+
+                <div class="resource-category">
+                    <h3>👨‍🏫 For Mentors</h3>
+                    <ul class="resource-list">
+                        <li><a href="Mentor_Guide.md" class="resource-link">👨‍🏫 Mentor Guide</a></li>
+                        <li><a href="#" class="resource-link">📈 Progress Tracking</a></li>
+                        <li><a href="#" class="resource-link">🔧 Technical Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="resource-category">
+                    <h3>🛠️ Tools & Software</h3>
+                    <ul class="resource-list">
+                        <li><a href="#" class="resource-link">💻 CAD Software Links</a></li>
+                        <li><a href="#" class="resource-link">📐 Measurement Guides</a></li>
+                        <li><a href="#" class="resource-link">⚙️ Mechanism Calculators</a></li>
+                    </ul>
+                </div>
+
+                <div class="resource-category">
+                    <h3>📚 Additional Learning</h3>
+                    <ul class="resource-list">
+                        <li><a href="#" class="resource-link">🎥 Video Tutorials</a></li>
+                        <li><a href="#" class="resource-link">📖 Reference Materials</a></li>
+                        <li><a href="#" class="resource-link">🤝 Community Forum</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Assessments Section -->
+        <section id="assessments" class="content-section">
+            <h2>✅ Assessments & Progress</h2>
+            
+            <div class="assessment-overview">
+                <div class="assessment-card">
+                    <h3>📊 Progress Tracking</h3>
+                    <div class="assessment-grid">
+                        <div class="assessment-item">
+                            <span class="week-label">Week 1</span>
+                            <span class="status pending" id="status-1">Pending</span>
+                        </div>
+                        <div class="assessment-item">
+                            <span class="week-label">Week 2</span>
+                            <span class="status locked" id="status-2">Locked</span>
+                        </div>
+                        <div class="assessment-item">
+                            <span class="week-label">Week 3</span>
+                            <span class="status locked" id="status-3">Locked</span>
+                        </div>
+                        <div class="assessment-item">
+                            <span class="week-label">Week 4</span>
+                            <span class="status locked" id="status-4">Locked</span>
+                        </div>
+                        <div class="assessment-item">
+                            <span class="week-label">Week 5</span>
+                            <span class="status locked" id="status-5">Locked</span>
+                        </div>
+                        <div class="assessment-item">
+                            <span class="week-label">Week 6</span>
+                            <span class="status locked" id="status-6">Locked</span>
+                        </div>
+                        <div class="assessment-item">
+                            <span class="week-label">Week 7</span>
+                            <span class="status locked" id="status-7">Locked</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="assessment-card">
+                    <h3>🎯 Learning Objectives</h3>
+                    <div class="objectives-checklist">
+                        <label><input type="checkbox" disabled> Follow workshop safety protocols</label>
+                        <label><input type="checkbox" disabled> Use CAD software effectively</label>
+                        <label><input type="checkbox" disabled> Select appropriate fasteners</label>
+                        <label><input type="checkbox" disabled> Analyze mechanisms</label>
+                        <label><input type="checkbox" disabled> Choose materials properly</label>
+                        <label><input type="checkbox" disabled> Understand manufacturing</label>
+                        <label><input type="checkbox" disabled> Test and validate designs</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forum Section -->
+        <section id="forum" class="content-section">
+            <h2>💬 Discussion Forum</h2>
+            
+            <div class="forum-container">
+                <div class="forum-header">
+                    <button class="btn btn-primary" onclick="showNewTopicForm()">➕ New Topic</button>
+                    <div class="forum-search">
+                        <input type="text" placeholder="Search discussions..." id="forum-search">
+                        <button class="btn btn-secondary" onclick="searchForum()">🔍</button>
+                    </div>
+                </div>
+
+                <div class="forum-categories">
+                    <div class="category-tab active" onclick="filterForum('all')">All Discussions</div>
+                    <div class="category-tab" onclick="filterForum('questions')">❓ Questions</div>
+                    <div class="category-tab" onclick="filterForum('projects')">🔧 Projects</div>
+                    <div class="category-tab" onclick="filterForum('general')">💭 General</div>
+                </div>
+
+                <div class="forum-topics" id="forum-topics">
+                    <div class="forum-topic" data-category="questions">
+                        <div class="topic-info">
+                            <h4>How do I calculate gear ratios?</h4>
+                            <p class="topic-meta">By Student_Alex • Week 4 • 3 replies • 2 hours ago</p>
+                            <p class="topic-preview">I'm struggling with the gear ratio calculations in Week 4. Can someone explain...</p>
+                        </div>
+                        <div class="topic-stats">
+                            <span>👥 4</span>
+                            <span>💬 3</span>
+                        </div>
+                    </div>
+
+                    <div class="forum-topic" data-category="projects">
+                        <div class="topic-info">
+                            <h4>Week 3 Fastener Selection Project</h4>
+                            <p class="topic-meta">By Student_Maria • Week 3 • 7 replies • 1 day ago</p>
+                            <p class="topic-preview">Here's my approach to the fastener selection challenge...</p>
+                        </div>
+                        <div class="topic-stats">
+                            <span>👥 8</span>
+                            <span>💬 7</span>
+                        </div>
+                    </div>
+
+                    <div class="forum-topic" data-category="general">
+                        <div class="topic-info">
+                            <h4>FRC Competition Tips</h4>
+                            <p class="topic-meta">By Herby Robinson • General • 12 replies • 3 days ago</p>
+                            <p class="topic-preview">Some advice for the upcoming competition season...</p>
+                        </div>
+                        <div class="topic-stats">
+                            <span>👥 15</span>
+                            <span>💬 12</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Topic Form -->
+                <div id="new-topic-form" class="new-topic-form hidden">
+                    <h3>Create New Discussion</h3>
+                    <input type="text" placeholder="Topic title..." id="topic-title">
+                    <select id="topic-category">
+                        <option value="questions">❓ Questions</option>
+                        <option value="projects">🔧 Projects</option>
+                        <option value="general">💭 General</option>
+                    </select>
+                    <textarea placeholder="Write your post..." id="topic-content"></textarea>
+                    <div class="form-actions">
+                        <button class="btn btn-primary" onclick="submitTopic()">Post Topic</button>
+                        <button class="btn btn-secondary" onclick="cancelNewTopic()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendar Section -->
+        <section id="calendar" class="content-section">
+            <h2>📅 Course Calendar</h2>
+            
+            <div class="calendar-view">
+                <div class="calendar-header">
+                    <h3>Fall 2024 Schedule - Every Friday</h3>
+                </div>
+                
+                <div class="calendar-grid">
+                    <div class="calendar-event current">
+                        <div class="event-date">Oct 25</div>
+                        <div class="event-title">Week 1: Safety & Tools</div>
+                        <div class="event-status">📍 Current</div>
+                    </div>
+                    <div class="calendar-event">
+                        <div class="event-date">Nov 1</div>
+                        <div class="event-title">Week 2: Measurement & CAD</div>
+                        <div class="event-status">⏳ Upcoming</div>
+                    </div>
+                    <div class="calendar-event">
+                        <div class="event-date">Nov 8</div>
+                        <div class="event-title">Week 3: Fasteners</div>
+                        <div class="event-status">⏳ Upcoming</div>
+                    </div>
+                    <div class="calendar-event">
+                        <div class="event-date">Nov 15</div>
+                        <div class="event-title">Week 4: Mechanisms</div>
+                        <div class="event-status">⏳ Upcoming</div>
+                    </div>
+                    <div class="calendar-event">
+                        <div class="event-date">Nov 22</div>
+                        <div class="event-title">Week 5: Structural Design</div>
+                        <div class="event-status">⏳ Upcoming</div>
+                    </div>
+                    <div class="calendar-event">
+                        <div class="event-date">Nov 29</div>
+                        <div class="event-title">Week 6: Manufacturing</div>
+                        <div class="event-status">⏳ Upcoming</div>
+                    </div>
+                    <div class="calendar-event">
+                        <div class="event-date">Dec 6</div>
+                        <div class="event-title">Week 7: Competition</div>
+                        <div class="event-status">🏆 Final</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instructor Dashboard -->
+        <section id="instructor" class="content-section">
+            <h2>👨‍🏫 Mentor Team Dashboard</h2>
+            
+            <!-- Mentor Team Section -->
+            <div class="mentor-team-section">
+                <h3>🏆 Umoja 7712 Mentor Team</h3>
+                <div class="mentor-grid">
+                    <div class="mentor-card lead-mentor">
+                        <div class="mentor-avatar">👨‍🏫</div>
+                        <div class="mentor-info">
+                            <h4>Herby Robinson</h4>
+                            <p class="mentor-role">Lead Mentor</p>
+                            <p class="mentor-specialty">Team Leadership & Strategy</p>
+                        </div>
+                    </div>
+                    <div class="mentor-card mechanical-mentor">
+                        <div class="mentor-avatar">🔧</div>
+                        <div class="mentor-info">
+                            <h4>Grantley Blenman</h4>
+                            <p class="mentor-role">Mechanical Mentor</p>
+                            <p class="mentor-specialty">Manufacturing & Assembly</p>
+                        </div>
+                    </div>
+                    <div class="mentor-card mechanical-mentor">
+                        <div class="mentor-avatar">⚙️</div>
+                        <div class="mentor-info">
+                            <h4>Dawit Gulta</h4>
+                            <p class="mentor-role">Mechanical Mentor</p>
+                            <p class="mentor-specialty">Mechanisms & Design</p>
+                        </div>
+                    </div>
+                    <div class="mentor-card cad-mentor">
+                        <div class="mentor-avatar">💻</div>
+                        <div class="mentor-info">
+                            <h4>Eustace Imafidon</h4>
+                            <p class="mentor-role">CAD Mentor</p>
+                            <p class="mentor-specialty">3D Modeling & Technical Drawing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="instructor-grid">
+                <div class="instructor-card">
+                    <h3>📊 Class Progress Overview</h3>
+                    <div class="class-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Total Students</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">Active This Week</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">65%</span>
+                            <span class="stat-label">Average Progress</span>
+                        </div>
+                    </div>
+                    <div class="progress-chart">
+                        <div class="chart-bar" style="height: 20%">Week 1</div>
+                        <div class="chart-bar" style="height: 75%">Week 2</div>
+                        <div class="chart-bar" style="height: 65%">Week 3</div>
+                        <div class="chart-bar" style="height: 45%">Week 4</div>
+                        <div class="chart-bar" style="height: 25%">Week 5</div>
+                        <div class="chart-bar" style="height: 10%">Week 6</div>
+                        <div class="chart-bar" style="height: 5%">Week 7</div>
+                    </div>
+                </div>
+
+                <div class="instructor-card">
+                    <h3>🎯 Quick Actions</h3>
+                    <div class="quick-actions">
+                        <button class="btn btn-primary" onclick="exportProgress()">📊 Export Progress Report</button>
+                        <button class="btn btn-secondary" onclick="sendAnnouncement()">📢 Send Announcement</button>
+                        <button class="btn btn-secondary" onclick="viewSubmissions()">📝 View Submissions</button>
+                        <button class="btn btn-outline" onclick="resetAllProgress()">🔄 Reset Class Progress</button>
+                    </div>
+                </div>
+
+                <div class="instructor-card">
+                    <h3>📈 Recent Activity</h3>
+                    <div class="activity-feed">
+                        <div class="activity-item">
+                            <span class="activity-time">2 hours ago</span>
+                            <span class="activity-text">Sarah completed Week 4 Quiz (Score: 85%)</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-time">4 hours ago</span>
+                            <span class="activity-text">New forum post: "Gear ratio help needed"</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-time">1 day ago</span>
+                            <span class="activity-text">Michael submitted Week 3 project</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-time">1 day ago</span>
+                            <span class="activity-text">Emma started Week 5 lesson</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="lms-footer">
+        <div class="container">
+            <p>&copy; 2024 Umoja 7712 FRC Robotics Team | Mechanical Engineering Curriculum</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
