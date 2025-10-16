@@ -239,10 +239,10 @@ function getMaterialsListContent() {
                 <div class="material-category">
                     <h4>💻 Software & Technology</h4>
                     <ul>
-                        <li><strong>CAD Software:</strong> SolidWorks or Fusion 360 (free for students)</li>
+                        <li><strong>CAD Software:</strong> Onshape (free cloud-based CAD platform)</li>
                         <li><strong>Programming:</strong> LabVIEW or VS Code for robot control</li>
                         <li><strong>Calculators:</strong> Scientific calculator for engineering math</li>
-                        <li><strong>Computers:</strong> Windows PC with dedicated graphics recommended</li>
+                        <li><strong>Computers:</strong> Any computer with web browser for Onshape</li>
                     </ul>
                 </div>
             </div>
