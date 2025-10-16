@@ -11,6 +11,288 @@ document.addEventListener('DOMContentLoaded', function() {
     updateProgressDisplay();
 });
 
+// Resource display functions
+function openSafetyProtocols() {
+    const modal = createResourceModal('Safety Protocols (READ FIRST!)', getSafetyProtocolsContent());
+    document.body.appendChild(modal);
+    modal.style.display = 'block';
+}
+
+function openMaterialsList() {
+    const modal = createResourceModal('Materials & Tools List', getMaterialsListContent());
+    document.body.appendChild(modal);
+    modal.style.display = 'block';
+}
+
+function createResourceModal(title, content) {
+    const modal = document.createElement('div');
+    modal.className = 'resource-modal';
+    modal.innerHTML = `
+        <div class="resource-modal-content">
+            <div class="resource-modal-header">
+                <h2>${title}</h2>
+                <span class="resource-close" onclick="closeResourceModal(this)">&times;</span>
+            </div>
+            <div class="resource-modal-body">
+                ${content}
+            </div>
+        </div>
+    `;
+    return modal;
+}
+
+function closeResourceModal(closeBtn) {
+    const modal = closeBtn.closest('.resource-modal');
+    modal.remove();
+}
+
+function getSafetyProtocolsContent() {
+    return `
+        <div class="safety-content">
+            <div class="safety-alert">
+                <h3>🛡️ SAFETY IS OUR TOP PRIORITY</h3>
+                <p><strong>All students must read and understand these protocols before participating in any hands-on activities.</strong></p>
+            </div>
+            
+            <h3>🔴 REQUIRED Personal Protective Equipment (PPE)</h3>
+            <div class="ppe-grid">
+                <div class="ppe-item">
+                    <h4>👓 Safety Glasses</h4>
+                    <p><strong>REQUIRED AT ALL TIMES</strong> in workshop areas</p>
+                    <ul>
+                        <li>ANSI Z87.1 rated with side shields</li>
+                        <li>Must fit properly over prescription glasses</li>
+                        <li>No exceptions - safety glasses always on in shop</li>
+                    </ul>
+                </div>
+                <div class="ppe-item">
+                    <h4>👟 Closed-Toe Shoes</h4>
+                    <p><strong>MANDATORY</strong> - No sandals, flip-flops, or canvas shoes</p>
+                    <ul>
+                        <li>Leather or synthetic uppers preferred</li>
+                        <li>Covers entire foot</li>
+                        <li>Laces tied securely</li>
+                    </ul>
+                </div>
+                <div class="ppe-item">
+                    <h4>👖 Long Pants</h4>
+                    <p><strong>REQUIRED</strong> - No shorts in workshop areas</p>
+                    <ul>
+                        <li>Natural fibers preferred (cotton)</li>
+                        <li>No loose or baggy clothing near machinery</li>
+                        <li>Cuffs should not drag on floor</li>
+                    </ul>
+                </div>
+                <div class="ppe-item">
+                    <h4>🎧 Hearing Protection</h4>
+                    <p><strong>REQUIRED</strong> for power tool operations</p>
+                    <ul>
+                        <li>Ear plugs or over-ear protection</li>
+                        <li>Use when noise exceeds 85 dB</li>
+                        <li>Always during grinding or cutting operations</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>⚡ Critical Safety Rules</h3>
+            <div class="safety-rules">
+                <div class="rule-category">
+                    <h4>🔧 Tool Safety</h4>
+                    <ul>
+                        <li><strong>Inspect before use:</strong> Check all tools for damage before operation</li>
+                        <li><strong>Right tool for job:</strong> Use tools only for their intended purpose</li>
+                        <li><strong>Secure workpieces:</strong> Always clamp or secure materials being worked on</li>
+                        <li><strong>Clean after use:</strong> Clean and store tools properly after use</li>
+                    </ul>
+                </div>
+                <div class="rule-category">
+                    <h4>⚡ Power Tool Safety</h4>
+                    <ul>
+                        <li><strong>Direct supervision required:</strong> Adult mentor must supervise power tool use</li>
+                        <li><strong>Unplug when changing:</strong> Disconnect power when changing bits or blades</li>
+                        <li><strong>Wait for complete stop:</strong> Let tools come to complete stop before setting down</li>
+                        <li><strong>Two-handed operation:</strong> Use both hands when operating power tools</li>
+                    </ul>
+                </div>
+                <div class="rule-category">
+                    <h4>🏭 Workshop Behavior</h4>
+                    <ul>
+                        <li><strong>Stay alert:</strong> No horseplay or distractions in workshop areas</li>
+                        <li><strong>Clean workspace:</strong> Keep work areas clean and organized</li>
+                        <li><strong>Report hazards:</strong> Immediately report unsafe conditions</li>
+                        <li><strong>Ask questions:</strong> When in doubt, ask a mentor</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>🚨 Emergency Procedures</h3>
+            <div class="emergency-procedures">
+                <div class="emergency-item">
+                    <h4>🩹 Minor Injuries</h4>
+                    <ol>
+                        <li>Stop work immediately</li>
+                        <li>Notify mentor immediately</li>
+                        <li>Apply first aid as appropriate</li>
+                        <li>Document injury in safety log</li>
+                        <li>Contact parent/guardian if needed</li>
+                    </ol>
+                </div>
+                <div class="emergency-item">
+                    <h4>🚑 Serious Injuries</h4>
+                    <ol>
+                        <li>Call 911 immediately</li>
+                        <li>Do not move injured person</li>
+                        <li>Apply first aid within training limits</li>
+                        <li>Clear area of other students</li>
+                        <li>Notify school administration</li>
+                    </ol>
+                </div>
+                <div class="emergency-item">
+                    <h4>🔥 Fire Emergency</h4>
+                    <ol>
+                        <li>Activate fire alarm</li>
+                        <li>Evacuate immediately via nearest exit</li>
+                        <li>Report to assembly point</li>
+                        <li>Do not re-enter building</li>
+                        <li>Account for all team members</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="safety-commitment">
+                <h3>✋ Your Safety Commitment</h3>
+                <p><strong>By participating in the Umoja Robotics program, you commit to:</strong></p>
+                <ul>
+                    <li>Following all safety procedures without exception</li>
+                    <li>Using required PPE at all times</li>
+                    <li>Asking questions when unsure about procedures</li>
+                    <li>Reporting unsafe conditions immediately</li>
+                    <li>Helping maintain a safe environment for everyone</li>
+                </ul>
+            </div>
+        </div>
+    `;
+}
+
+function getMaterialsListContent() {
+    return `
+        <div class="materials-content">
+            <h3>🛠️ Essential Tools & Materials</h3>
+            <p><strong>Everything you need for the Umoja Robotics mechanical curriculum</strong></p>
+            
+            <div class="materials-grid">
+                <div class="material-category">
+                    <h4>📏 Measuring Tools</h4>
+                    <ul>
+                        <li><strong>Ruler (12"/30cm):</strong> For basic measurements and layout</li>
+                        <li><strong>Tape Measure (25'+):</strong> Long distance measurements</li>
+                        <li><strong>Calipers (Digital):</strong> Precision measurements (±0.001")</li>
+                        <li><strong>Square (Combination):</strong> Checking angles and marking</li>
+                        <li><strong>Protractor:</strong> Angle measurement and layout</li>
+                    </ul>
+                </div>
+                
+                <div class="material-category">
+                    <h4>🔧 Hand Tools</h4>
+                    <ul>
+                        <li><strong>Screwdriver Set:</strong> Phillips (#1, #2, #3), Flathead, Torx</li>
+                        <li><strong>Wrench Set:</strong> Metric (8-19mm) and SAE (5/16"-3/4")</li>
+                        <li><strong>Socket Set:</strong> 1/4" and 3/8" drive with extensions</li>
+                        <li><strong>Pliers Set:</strong> Needle nose, standard, wire cutters</li>
+                        <li><strong>Hex Key Set:</strong> Metric and SAE Allen keys</li>
+                    </ul>
+                </div>
+                
+                <div class="material-category">
+                    <h4>⚡ Power Tools (Mentor Supervised)</h4>
+                    <ul>
+                        <li><strong>Drill/Driver:</strong> Cordless with various bits</li>
+                        <li><strong>Angle Grinder:</strong> For cutting and grinding metal</li>
+                        <li><strong>Jigsaw:</strong> Curved cuts in various materials</li>
+                        <li><strong>Bandsaw:</strong> Precision metal cutting</li>
+                        <li><strong>Drill Press:</strong> Accurate hole drilling</li>
+                    </ul>
+                </div>
+                
+                <div class="material-category">
+                    <h4>🛡️ Safety Equipment</h4>
+                    <ul>
+                        <li><strong>Safety Glasses:</strong> ANSI Z87.1 rated (REQUIRED)</li>
+                        <li><strong>Hearing Protection:</strong> Ear plugs or muffs</li>
+                        <li><strong>Work Gloves:</strong> Cut-resistant for material handling</li>
+                        <li><strong>First Aid Kit:</strong> Comprehensive emergency supplies</li>
+                        <li><strong>Fire Extinguisher:</strong> ABC rated for workshop use</li>
+                    </ul>
+                </div>
+                
+                <div class="material-category">
+                    <h4>🤖 FRC Components</h4>
+                    <ul>
+                        <li><strong>Aluminum Extrusion:</strong> 1" x 1" and 2" x 1" structural pieces</li>
+                        <li><strong>Fasteners:</strong> #10-32 and 1/4-20 bolts, nuts, washers</li>
+                        <li><strong>Brackets:</strong> Various angles and gussets</li>
+                        <li><strong>Wheels:</strong> 6" pneumatic or solid wheels</li>
+                        <li><strong>Motors:</strong> CIM, Mini CIM, and bag motors</li>
+                    </ul>
+                </div>
+                
+                <div class="material-category">
+                    <h4>💻 Software & Technology</h4>
+                    <ul>
+                        <li><strong>CAD Software:</strong> SolidWorks or Fusion 360 (free for students)</li>
+                        <li><strong>Programming:</strong> LabVIEW or VS Code for robot control</li>
+                        <li><strong>Calculators:</strong> Scientific calculator for engineering math</li>
+                        <li><strong>Computers:</strong> Windows PC with dedicated graphics recommended</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="materials-notes">
+                <h3>📋 Important Notes</h3>
+                <div class="note-section">
+                    <h4>🔥 What Students Should Bring</h4>
+                    <ul>
+                        <li>Safety glasses (if you have your own)</li>
+                        <li>Notebook and pencils for taking notes</li>
+                        <li>Closed-toe shoes and long pants</li>
+                        <li>Water bottle (workshop can get warm)</li>
+                        <li>Positive attitude and willingness to learn!</li>
+                    </ul>
+                </div>
+                
+                <div class="note-section">
+                    <h4>🏫 Provided by Umoja Robotics</h4>
+                    <ul>
+                        <li>All power tools and major equipment</li>
+                        <li>Safety equipment (glasses, hearing protection)</li>
+                        <li>Basic hand tools and measuring instruments</li>
+                        <li>FRC components and materials for projects</li>
+                        <li>Software licenses and computer access</li>
+                    </ul>
+                </div>
+                
+                <div class="note-section">
+                    <h4>⚠️ Restrictions & Guidelines</h4>
+                    <ul>
+                        <li><strong>Age Restrictions:</strong> Power tool use requires mentor supervision</li>
+                        <li><strong>Tool Checkout:</strong> Sign out tools and return after use</li>
+                        <li><strong>Damage Policy:</strong> Report any tool damage immediately</li>
+                        <li><strong>Clean Up:</strong> Everyone participates in workshop cleanup</li>
+                        <li><strong>Personal Tools:</strong> May bring own tools but check with mentor first</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="cost-info">
+                <h3>💰 Cost Information</h3>
+                <p><strong>Participation in the Umoja Robotics curriculum is FREE for all students!</strong></p>
+                <p>All tools, materials, and software are provided through team funding and sponsorships.</p>
+                <p><em>Optional:</em> Students may purchase their own safety glasses and basic tools if desired.</p>
+            </div>
+        </div>
+    `;
+}
+
 // Initialize LMS functionality
 function initializeLMS() {
     // Set default active section

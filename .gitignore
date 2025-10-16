@@ -29,3 +29,10 @@ desktop.ini
 *Copilot*
 *ai-*
 *AI-*
+
+# Ignore node_modules and development files
+LMS/
+node_modules/
+npm-debug.log
+yarn-error.log
+*.lock
