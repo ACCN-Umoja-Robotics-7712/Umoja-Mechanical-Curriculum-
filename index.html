@@ -73,7 +73,29 @@
                 </div>
             </div>
 
-            <h2>📊 Learning Dashboard</h2>
+            <!-- Student Sign-In Section -->
+            <div id="student-signin" class="student-signin-section">
+                <div class="signin-card">
+                    <h3>🎓 Student Sign-In</h3>
+                    <p>Enter your name to track your progress through the Umoja Robotics curriculum</p>
+                    <div class="signin-form">
+                        <input type="text" id="student-name" placeholder="Enter your full name" maxlength="50">
+                        <button class="btn btn-primary" onclick="signInStudent()">Start Learning</button>
+                    </div>
+                    <div class="signin-info">
+                        <p><small>Your progress will be saved locally on this device</small></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Dashboard (Hidden until signed in) -->
+            <div id="main-dashboard" style="display: none;">
+                <div class="student-welcome">
+                    <h2>Welcome back, <span id="student-display-name"></span>! 👋</h2>
+                    <button class="btn btn-outline btn-sm" onclick="signOutStudent()">Sign Out</button>
+                </div>
+
+                <h2>📊 Learning Dashboard</h2>
             
             <div class="dashboard-grid">
                 <div class="card progress-card umoja-accent-card">
@@ -135,6 +157,7 @@
                     </div>
                 </div>
             </div>
+            </div> <!-- Close main-dashboard -->
         </section>
 
         <!-- Lessons Section -->
@@ -157,25 +180,23 @@
                     </div>
                 </div>
 
-                <div class="lesson-card locked" data-week="2">
-                    <div class="lesson-status">🔒</div>
-                    <h3>Week 2 - November 1</h3>
+                <div class="lesson-card coming-soon" data-week="2">
+                    <div class="lesson-status">�</div>
+                    <h3>Week 2 - Coming Soon</h3>
                     <h4>📏💻 Measurement & CAD Basics</h4>
                     <p>Master precision measurement techniques and professional CAD modeling for championship-level design accuracy</p>
                     <div class="lesson-meta">
-                        <span>⏱️ 4-6 hours</span>
+                        <span>⏱️ Available after Week 1 pilot</span>
                         <span>📋 Materials: Calculator, calipers, CAD software</span>
                     </div>
                     <div class="lesson-actions">
-                        <button class="btn btn-primary" onclick="openInteractiveLesson(2)" style="display: none;" id="lesson2-start">Start Lesson</button>
-                        <button class="btn btn-disabled" disabled id="lesson2-locked">Complete Week 1 First</button>
-                        <button class="btn btn-outline" onclick="markComplete(2)" style="display: none;" id="lesson2-complete">Mark Complete</button>
+                        <button class="btn btn-disabled" disabled>Coming Soon</button>
                     </div>
                 </div>
 
-                <div class="lesson-card locked" data-week="3">
-                    <div class="lesson-status">🔒</div>
-                    <h3>Week 3 - November 8</h3>
+                <div class="lesson-card coming-soon" data-week="3">
+                    <div class="lesson-status">�</div>
+                    <h3>Week 3 - Coming Soon</h3>
                     <h4>🔩⚙️ Fasteners & Hardware</h4>
                     <p>Master professional fastener selection, torque specifications, and assembly techniques for robust robot construction</p>
                     <div class="lesson-meta">
@@ -187,9 +208,9 @@
                     </div>
                 </div>
 
-                <div class="lesson-card locked" data-week="4">
-                    <div class="lesson-status">🔒</div>
-                    <h3>Week 4 - November 15</h3>
+                <div class="lesson-card coming-soon" data-week="4">
+                    <div class="lesson-status">�</div>
+                    <h3>Week 4 - Coming Soon</h3>
                     <h4>⚙️🎯 Mechanisms & Motion</h4>
                     <p>Design and build gear trains, linkages, and motion systems that bring championship robots to life</p>
                     <div class="lesson-meta">
@@ -201,9 +222,9 @@
                     </div>
                 </div>
 
-                <div class="lesson-card locked" data-week="5">
-                    <div class="lesson-status">🔒</div>
-                    <h3>Week 5 - November 22</h3>
+                <div class="lesson-card coming-soon" data-week="5">
+                    <div class="lesson-status">�</div>
+                    <h3>Week 5 - Coming Soon</h3>
                     <h4>🏗️📐 Structural Design & Materials</h4>
                     <p>Master structural analysis and materials engineering to build frames that withstand the most intense FRC competition forces</p>
                     <div class="lesson-meta">
@@ -215,9 +236,9 @@
                     </div>
                 </div>
 
-                <div class="lesson-card locked" data-week="6">
-                    <div class="lesson-status">🔒</div>
-                    <h3>Week 6 - November 29</h3>
+                <div class="lesson-card coming-soon" data-week="6">
+                    <div class="lesson-status">�</div>
+                    <h3>Week 6 - Coming Soon</h3>
                     <h4>🏭⚙️ Manufacturing & Assembly</h4>
                     <p>Transform CAD designs into championship robots using professional manufacturing and assembly techniques</p>
                     <div class="lesson-meta">
@@ -229,9 +250,9 @@
                     </div>
                 </div>
 
-                <div class="lesson-card locked" data-week="7">
-                    <div class="lesson-status">🔒</div>
-                    <h3>Week 7 - December 6</h3>
+                <div class="lesson-card coming-soon" data-week="7">
+                    <div class="lesson-status">�</div>
+                    <h3>Week 7 - Coming Soon</h3>
                     <h4>🏆🤖 Integration, Testing & Competition</h4>
                     <p>Complete your transformation into an FRC champion with systems integration, testing protocols, and competition mastery</p>
                     <div class="lesson-meta">

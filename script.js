@@ -1,4 +1,4 @@
-// Umoja 7712 FRC Robotics LMS JavaScript - Fixed Version
+// Umoja 7712 Robotics LMS JavaScript - Fixed Version
 
 // Global state management
 let currentProgress = 0;
@@ -30,7 +30,7 @@ function initializeLMS() {
     // Initialize lesson cards
     initializeLessonCards();
     
-    console.log('Umoja 7712 FRC Robotics LMS Initialized');
+    console.log('Umoja 7712 Robotics LMS Initialized');
 }
 
 // Show specific content section
@@ -100,12 +100,12 @@ function saveProgress() {
         completedLessons: completedLessons,
         lastAccessed: new Date().toISOString()
     };
-    localStorage.setItem('umojaFRCProgress', JSON.stringify(progressData));
+    localStorage.setItem('umojaRoboticsProgress', JSON.stringify(progressData));
 }
 
 function loadProgress() {
     try {
-        const saved = localStorage.getItem('umojaFRCProgress');
+        const saved = localStorage.getItem('umojaRoboticsProgress');
         if (saved) {
             const data = JSON.parse(saved);
             currentProgress = data.currentProgress || 0;
@@ -243,7 +243,7 @@ function checkQuizAnswers() {
 const lessonData = {
     1: {
         title: "Day 1: Safety & Tools/Equipment Introduction",
-        duration: "4-6 hours",
+        duration: "lesson",
         steps: [
             {
                 title: "🎯 Objectives & Lesson Notes",
@@ -307,17 +307,17 @@ const lessonData = {
                     <div class="lesson-section">
                         <h3>Day 1: Safety & Tools/Equipment Introduction 🛡️🔧</h3>
                         <div class="welcome-message">
-                            <p><strong>Welcome to your FRC robotics journey!</strong> Today we build the foundation that separates championship teams from the rest. Every successful robot starts with safe practices and precise tool work!</p>
+                            <p><strong>Welcome to your robotics journey!</strong> Today we build the foundation that separates championship teams from the rest. Every successful robot starts with safe practices and precise tool work!</p>
                         </div>
                         
                         <div class="objectives-card">
                             <h4>🎯 Master These Skills Today</h4>
-                            <p><strong>By the end of this 4-6 hour intensive, you'll be ready to contribute to any FRC team:</strong></p>
+                            <p><strong>By the end of this lesson, you'll be ready to contribute to any robotics team:</strong></p>
                             
                             <div class="objective-section safety">
                                 <h5>🛡️ Safety Excellence</h5>
                                 <ul>
-                                    <li>Execute all FRC workshop safety protocols without supervision</li>
+                                    <li>Execute all Umoja Robotics workshop safety protocols without supervision</li>
                                     <li>Identify and prevent common workshop hazards</li>
                                     <li>Respond appropriately to emergency situations</li>
                                     <li>Maintain organized, professional workspace standards</li>
@@ -327,16 +327,16 @@ const lessonData = {
                             <div class="objective-section tools">
                                 <h5>🔧 Tool Mastery</h5>
                                 <ul>
-                                    <li>Identify 25+ essential tools by sight and explain their uses</li>
+                                    <li>Identify 10 essential tools by sight and explain their uses</li>
                                     <li>Demonstrate proper technique for measuring tools (ruler, tape, calipers)</li>
                                     <li>Handle all basic hand tools safely and effectively</li>
                                     <li>Select the right tool for specific robotics tasks</li>
-                                    <li>Achieve measurement accuracy within 1/32" tolerance</li>
+                                    <li>Achieve measurement accuracy within tools</li>
                                 </ul>
                             </div>
                             
                             <div class="objective-section application">
-                                <h5>🤖 FRC Application</h5>
+                                <h5>🤖 Umoja Robotics Application</h5>
                                 <ul>
                                     <li>Connect every tool to real robot construction scenarios</li>
                                     <li>Understand precision requirements for competition-ready robots</li>
@@ -350,11 +350,11 @@ const lessonData = {
                             <h4>📅 Today's Schedule</h4>
                             <div class="timeline">
                                 <div class="timeline-item">
-                                    <h5>Hours 1-3: Safety Fundamentals</h5>
+                                    <h5>Part 1: Safety Fundamentals</h5>
                                     <p>Safety rules, protective equipment, group safety practice</p>
                                 </div>
                                 <div class="timeline-item">
-                                    <h5>Hours 4-6: Tools & Equipment</h5>
+                                    <h5>Part 2: Tools & Equipment</h5>
                                     <p>Tool identification, measuring practice, hands-on activities</p>
                                 </div>
                             </div>
@@ -369,7 +369,7 @@ const lessonData = {
                         
                         <div class="daily-overview">
                             <h4>🎯 Today's Focus</h4>
-                            <p>Building a strong foundation in workshop safety and basic tool knowledge - essential skills for every FRC robotics team member!</p>
+                            <p>Building a strong foundation in workshop safety and basic tool knowledge - essential skills for every Umoja Robotics team member!</p>
                         </div>
                         
                         <div class="note-section">
@@ -401,9 +401,9 @@ const lessonData = {
                         </div>
                         
                         <div class="robotics-connection">
-                            <h4>🤖 Why This Matters in FRC</h4>
+                            <h4>🤖 Why This Matters in Umoja Robotics</h4>
                             <p style="background: #fff3cd; padding: 10px; border-radius: 5px;">
-                                Professional FRC teams like 254 "The Cheesy Poofs" and 1678 "Citrus Circuits" win championships because they master these fundamentals first. Safety prevents injuries that could sideline team members, and proper tool use ensures robot parts fit perfectly!
+                                Professional robotics teams like Umoja 7712 win championships because they master these fundamentals first. Safety prevents injuries that could sideline team members, and proper tool use ensures robot parts fit perfectly!
                             </p>
                         </div>
                     </div>
@@ -412,10 +412,10 @@ const lessonData = {
             2: { // Video Presentation
                 content: `
                     <div class="lesson-section">
-                        <h3>📺 FRC Safety Training Video</h3>
+                        <h3>📺 Robotics Safety Training Video</h3>
                         
                         <div class="video-intro">
-                            <p><strong>Essential viewing for all FRC participants!</strong> This official safety training covers everything you need to know to work safely in any FRC workshop environment.</p>
+                            <p><strong>Essential viewing for all Umoja Robotics participants!</strong> This official safety training covers everything you need to know to work safely in any robotics workshop environment.</p>
                             
                             <div class="video-highlights">
                                 <h4>🎯 Key Topics Covered:</h4>
@@ -424,14 +424,14 @@ const lessonData = {
                                     <li>Workshop hazard identification and prevention</li>
                                     <li>Safe tool handling and machine operation protocols</li>
                                     <li>Emergency procedures and first aid basics</li>
-                                    <li>FRC-specific safety standards and best practices</li>
+                                    <li>Umoja Robotics safety standards and best practices</li>
                                 </ul>
                             </div>
                         </div>
                         
                         <div class="video-section">
-                            <button onclick="openYouTubeVideo('cyknxL-lIKo', 'FRC Safety Training')" class="btn btn-primary btn-large">
-                                ▶️ Watch Official FRC Safety Video (15 minutes)
+                            <button onclick="openYouTubeVideo('cyknxL-lIKo', 'Robotics Safety Training')" class="btn btn-primary btn-large">
+                                ▶️ Watch Official Robotics Safety Video (15 minutes)
                             </button>
                             
                             <div class="video-notes">
@@ -496,7 +496,7 @@ const lessonData = {
                         
                         <div class="tools-intro">
                             <h4>🛠️ From Caveman to Championship Robot</h4>
-                            <p><strong>Did you know?</strong> Humans first used tools 2.6 million years ago. Today, FRC teams like Team 254 "The Cheesy Poofs" use these same fundamental tool principles to build championship-winning robots!</p>
+                            <p><strong>Did you know?</strong> Humans first used tools 2.6 million years ago. Today, Umoja Robotics uses these same fundamental tool principles to build championship-winning robots!</p>
                             
                             <div class="tool-philosophy">
                                 <blockquote style="background: #f5f5f5; padding: 15px; border-left: 4px solid #2196F3; margin: 15px 0; font-style: italic;">
@@ -515,21 +515,21 @@ const lessonData = {
                                     <div class="tool-item" style="background: white; padding: 15px; border-radius: 8px; margin: 10px;">
                                         <h5>🚀 Ruler (12"/30cm)</h5>
                                         <p><strong>Mission:</strong> Quick measurements up to 12 inches</p>
-                                        <p><strong>FRC Use:</strong> Layout sketches, small bracket dimensions</p>
+                                        <p><strong>Robotics Use:</strong> Layout sketches, small bracket dimensions</p>
                                         <p><strong>Pro Tip:</strong> Metal rulers cut straighter lines than plastic!</p>
                                         <p><strong>Accuracy:</strong> ±1/16" (1.5mm)</p>
                                     </div>
                                     <div class="tool-item" style="background: white; padding: 15px; border-radius: 8px; margin: 10px;">
                                         <h5>📏 Tape Measure (25'+)</h5>
                                         <p><strong>Mission:</strong> Long distance measurements, room layouts</p>
-                                        <p><strong>FRC Use:</strong> Field measurements, robot dimension checks</p>
+                                        <p><strong>Robotics Use:</strong> Field measurements, robot dimension checks</p>
                                         <p><strong>Pro Tip:</strong> The metal hook moves slightly - this is intentional for inside/outside measurements!</p>
                                         <p><strong>Accuracy:</strong> ±1/32" over 10 feet</p>
                                     </div>
                                     <div class="tool-item" style="background: white; padding: 15px; border-radius: 8px; margin: 10px;">
                                         <h5>⚡ Calipers (Digital/Dial)</h5>
                                         <p><strong>Mission:</strong> Ultra-precise measurements of parts</p>
-                                        <p><strong>FRC Use:</strong> Bearing fits, shaft diameters, thickness checks</p>
+                                        <p><strong>Robotics Use:</strong> Bearing fits, shaft diameters, thickness checks</p>
                                         <p><strong>Pro Tip:</strong> Zero the calipers before each use session!</p>
                                         <p><strong>Accuracy:</strong> ±0.001" (0.025mm) - That's thinner than paper!</p>
                                     </div>
@@ -538,7 +538,7 @@ const lessonData = {
                                 <div class="measurement-challenge">
                                     <h5>🎯 Precision Challenge</h5>
                                     <p style="background: #fff3cd; padding: 10px; border-radius: 5px;">
-                                        <strong>Real FRC Scenario:</strong> Your robot's wheel needs to fit precisely in a 0.5000" bearing. If your shaft is 0.5010" (too big) or 0.4985" (too small), your robot won't work! Can you measure accurately enough?
+                                        <strong>Real Umoja Robotics Scenario:</strong> Your robot's wheel needs to fit precisely in a 0.5000" bearing. If your shaft is 0.5010" (too big) or 0.4985" (too small), your robot won't work! Can you measure accurately enough?
                                     </p>
                                 </div>
                             </div>
@@ -548,24 +548,18 @@ const lessonData = {
                                 <p><em>These tools have built everything from the pyramids to Mars rovers!</em></p>
                                 
                                 <div class="tool-grid">
-                                    <div class="tool-item" style="background: white; padding: 15px; border-radius: 8px; margin: 10px;">
-                                        <h5>🔨 Hammer (16oz Claw)</h5>
-                                        <p><strong>Mission:</strong> Driving nails, shaping metal, assembly/disassembly</p>
-                                        <p><strong>FRC Use:</strong> Frame adjustments, pin removal, emergency repairs</p>
-                                        <p><strong>Safety Rule:</strong> Eye protection always! Grip firmly near handle end</p>
-                                        <p><strong>Pro Technique:</strong> Let the hammer do the work - swing from shoulder, not wrist</p>
-                                    </div>
+
                                     <div class="tool-item" style="background: white; padding: 15px; border-radius: 8px; margin: 10px;">
                                         <h5>🪚 Screwdriver Set</h5>
                                         <p><strong>Mission:</strong> Installing/removing screws of all types</p>
-                                        <p><strong>FRC Arsenal:</strong> Phillips (#1, #2, #3), Flathead (multiple sizes), Torx (T10-T40), Hex (2-10mm)</p>
+                                        <p><strong>Essential Types:</strong> Phillips (#1, #2, #3), Flathead (multiple sizes), Torx (T10-T40), Hex (2-10mm)</p>
                                         <p><strong>Golden Rule:</strong> Match the driver to the screw exactly - wrong size damages both!</p>
                                         <p><strong>Speed Tip:</strong> Magnetic tips hold screws = faster assembly</p>
                                     </div>
                                     <div class="tool-item" style="background: white; padding: 15px; border-radius: 8px; margin: 10px;">
                                         <h5>🔧 Wrench Set (Box-End/Open-End)</h5>
                                         <p><strong>Mission:</strong> Tightening/loosening nuts and bolts</p>
-                                        <p><strong>FRC Standard:</strong> Metric (8-19mm) and SAE (5/16"-3/4")</p>
+                                        <p><strong>Umoja Robotics Standard:</strong> Metric (8-19mm) and SAE (5/16"-3/4")</p>
                                         <p><strong>Remember:</strong> "Righty tighty, lefty loosey" + box-end for power, open-end for speed</p>
                                         <p><strong>Torque Secret:</strong> Consistent pressure prevents stripped fasteners</p>
                                     </div>
@@ -585,32 +579,7 @@ const lessonData = {
                             </div>
                         </div>
                         
-                        <div class="robotics-connection">
-                            <h4>🤖 From Tools to Championship Trophies</h4>
-                            <div style="background: #e3f2fd; padding: 20px; border-radius: 8px; margin: 15px 0;">
-                                <h5>Real FRC Success Stories:</h5>
-                                <div class="success-stories">
-                                    <div style="background: white; padding: 15px; border-radius: 5px; margin: 10px 0;">
-                                        <strong>🏆 Team 254 "The Cheesy Poofs"</strong>
-                                        <p>Uses precision calipers to ensure every bearing fits perfectly - helping them win 3 World Championships!</p>
-                                    </div>
-                                    <div style="background: white; padding: 15px; border-radius: 5px; margin: 10px 0;">
-                                        <strong>🥇 Team 1678 "Citrus Circuits"</strong>
-                                        <p>Their tool organization system allows for 30-second robot repairs during matches!</p>
-                                    </div>
-                                    <div style="background: white; padding: 15px; border-radius: 5px; margin: 10px 0;">
-                                        <strong>🎯 Team 148 "Robowranglers"</strong>
-                                        <p>Teaches every new member these exact same tools - building both robots and careers!</p>
-                                    </div>
-                                </div>
-                                
-                                <h5>Your Robot-Building Journey:</h5>
-                                <p><strong>Week 1:</strong> Learn these tools safely<br>
-                                <strong>Week 3:</strong> Help build practice robot<br>
-                                <strong>Week 6:</strong> Lead your own subsystem build<br>
-                                <strong>Competition:</strong> Make crucial repairs under pressure!</p>
-                            </div>
-                        </div>
+
                     </div>
                 `
             },
@@ -718,7 +687,7 @@ const lessonData = {
                         <h3>🛠️ Real Tools Challenge - Can You Identify Them All?</h3>
                         
                         <div class="challenge-intro">
-                            <p><strong>🎯 The Ultimate Tool Test!</strong> Your instructor has 15 real tools laid out. Can you identify them all and explain what they do? This is the same challenge given to new members of championship FRC teams!</p>
+                            <p><strong>🎯 The Ultimate Tool Test!</strong> Your instructor has 10 real tools laid out. Can you identify them all and explain what they do? This is the same challenge given to new members of Umoja Robotics!</p>
                             
                             <div class="scoring-system">
                                 <h4>🏆 Scoring System</h4>
@@ -795,7 +764,7 @@ const lessonData = {
                             <div class="bonus-challenge">
                                 <h4>🌟 Bonus Challenge</h4>
                                 <div style="background: #e3f2fd; padding: 15px; border-radius: 8px;">
-                                    <p><strong>FRC Team Captain Question:</strong> If you were building a robot drivetrain and needed to install motors, which 3 tools from this collection would be most essential? Explain why.</p>
+                                    <p><strong>Umoja Robotics Team Captain Question:</strong> If you were building a robot drivetrain and needed to install motors, which 3 tools from this collection would be most essential? Explain why.</p>
                                     <div style="margin-top: 10px;">
                                         <p><strong>Your Answer:</strong></p>
                                         <textarea style="width: 100%; height: 80px; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Write your reasoning here..."></textarea>
@@ -809,13 +778,13 @@ const lessonData = {
             9: { // Basic Measuring Practice
                 content: `
                     <div class="lesson-section">
-                        <h3>📏 Precision Measuring Lab - FRC Accuracy Challenge</h3>
+                        <h3>📏 Precision Measuring Lab - Umoja Robotics Accuracy Challenge</h3>
                         
                         <div class="lab-intro">
-                            <p><strong>🎯 Mission:</strong> Achieve the measurement accuracy required by championship FRC teams! In real robot building, a difference of 1/32" can mean the difference between a working mechanism and a broken one.</p>
+                            <p><strong>🎯 Mission:</strong> Achieve the measurement accuracy required by championship robotics teams! In real robot building, a difference of 1/32" can mean the difference between a working mechanism and a broken one.</p>
                             
                             <div class="accuracy-standards">
-                                <h4>🏆 FRC Measurement Standards</h4>
+                                <h4>🏆 Umoja Robotics Measurement Standards</h4>
                                 <ul style="background: #e8f5e8; padding: 15px; border-radius: 8px;">
                                     <li><strong>Structural measurements:</strong> ±1/16" (1.5mm) tolerance</li>
                                     <li><strong>Bearing fits:</strong> ±0.005" (0.13mm) tolerance</li>
@@ -898,11 +867,11 @@ const lessonData = {
             10: { // Tools Knowledge Check
                 content: `
                     <div class="lesson-section">
-                        <h3>✅ Final Challenge: FRC Team Member Certification</h3>
+                        <h3>✅ Final Challenge: Robotics Team Member Certification</h3>
                         
                         <div class="certification-intro">
                             <h4>🏆 Congratulations! Time for Your Official Assessment</h4>
-                            <p>You've completed the safety training and tool introduction. This final quiz determines if you're ready to work safely and effectively as an FRC team member!</p>
+                            <p>You've completed the safety training and tool introduction. This final quiz determines if you're ready to work safely and effectively as a robotics team member!</p>
                             
                             <div class="certification-standards">
                                 <h5>📋 Certification Requirements</h5>
@@ -972,7 +941,7 @@ const lessonData = {
                             </div>
                             
                             <div class="quiz-section scenario-section">
-                                <h5 style="color: #388e3c;">🤖 FRC Application Scenarios</h5>
+                                <h5 style="color: #388e3c;">🤖 Umoja Robotics Application Scenarios</h5>
                                 
                                 <div class="question" style="background: #e8f5e8; padding: 15px; border-radius: 8px; margin: 10px 0;">
                                     <h6>6. Your robot's arm needs to extend exactly 48 inches from the base. Which measurement approach is most appropriate?</h6>
@@ -999,14 +968,14 @@ const lessonData = {
                         </div>
                         
                         <div class="lesson-summary">
-                            <h4>🎯 Your Journey from Beginner to FRC Team Member</h4>
+                            <h4>🎯 Your Journey from Beginner to Robotics Team Member</h4>
                             <div style="background: #e8f5e8; padding: 25px; border-radius: 10px; margin: 20px 0;">
                                 <h5>🏆 Congratulations! You've Mastered:</h5>
                                 <div class="achievement-grid">
                                     <div style="background: white; padding: 15px; border-radius: 8px; margin: 10px;">
                                         <h6>🛡️ Safety Excellence</h6>
                                         <ul>
-                                            <li>FRC workshop safety protocols</li>
+                                            <li>Umoja Robotics workshop safety protocols</li>
                                             <li>Personal protective equipment (PPE)</li>
                                             <li>Emergency response procedures</li>
                                             <li>Hazard identification and prevention</li>
@@ -1031,7 +1000,7 @@ const lessonData = {
                                         </ul>
                                     </div>
                                     <div style="background: white; padding: 15px; border-radius: 8px; margin: 10px;">
-                                        <h6>🤖 FRC Applications</h6>
+                                        <h6>🤖 Umoja Robotics Applications</h6>
                                         <ul>
                                             <li>Robot construction requirements</li>
                                             <li>Competition precision standards</li>
@@ -1042,7 +1011,7 @@ const lessonData = {
                                 </div>
                                 
                                 <div class="next-steps">
-                                    <h5>🚀 Your Next Steps in FRC:</h5>
+                                    <h5>🚀 Your Next Steps in Umoja Robotics:</h5>
                                     <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin: 15px 0;">
                                         <p><strong>Week 2:</strong> Advanced measuring and marking techniques</p>
                                         <p><strong>Week 3:</strong> Introduction to power tools (observation)</p>
@@ -1069,7 +1038,7 @@ const lessonData = {
     
     2: {
         title: "Week 2: Measurement & CAD Basics",
-        duration: "4-6 hours",
+        duration: "lesson",
         steps: [
             {
                 title: "🎯 Objectives & Lesson Notes",
@@ -1133,12 +1102,12 @@ const lessonData = {
                     <div class="lesson-section">
                         <h3>Week 2: Precision Measurement & CAD Fundamentals 📏💻</h3>
                         <div class="welcome-message">
-                            <p><strong>Welcome to the world of precision!</strong> Today we master the measurement accuracy and digital design skills that separate amateur builders from championship FRC teams. Every successful robot starts with precise dimensions and professional CAD models!</p>
+                            <p><strong>Welcome to the world of precision!</strong> Today we master the measurement accuracy and digital design skills that separate amateur builders from championship teams like Umoja Robotics. Every successful robot starts with precise dimensions and professional CAD models!</p>
                         </div>
                         
                         <div class="objectives-card">
                             <h4>🎯 Master These Critical Skills Today</h4>
-                            <p><strong>By the end of this intensive session, you'll think and work like a professional engineer:</strong></p>
+                            <p><strong>By the end of this lesson, you'll think and work like a professional engineer:</strong></p>
                             
                             <div class="objective-section measurement">
                                 <h5>📏 Advanced Measurement Mastery</h5>
@@ -1162,9 +1131,9 @@ const lessonData = {
                             </div>
                             
                             <div class="objective-section application">
-                                <h5>🤖 FRC Design Integration</h5>
+                                <h5>🤖 Umoja Robotics Design Integration</h5>
                                 <ul>
-                                    <li>Model actual FRC components with competition accuracy</li>
+                                    <li>Model actual Umoja Robotics components with competition accuracy</li>
                                     <li>Understand design intent and parametric relationships</li>
                                     <li>Create assemblies that reflect real robot constraints</li>
                                     <li>Apply manufacturing considerations in digital design</li>
@@ -1173,7 +1142,7 @@ const lessonData = {
                         </div>
                         
                         <div class="lesson-timeline">
-                            <h4>📅 Today's Intensive Schedule</h4>
+                            <h4>📅 Today's Lesson Schedule</h4>
                             <div class="timeline-grid">
                                 <div class="timeline-item">
                                     <strong>Hour 1:</strong> Advanced measuring tool mastery
@@ -1245,7 +1214,7 @@ const lessonData = {
                                 <strong>ASME Y14.5 (GD&T):</strong> Professional dimensioning standards<br>
                                 <strong>ISO 286 (Fits & Tolerances):</strong> International precision standards<br>
                                 <strong>FIRST Design Standards:</strong> Competition-specific requirements<br>
-                                <strong>NASA Standards:</strong> Because some FRC alumni work there!
+                                <strong>NASA Standards:</strong> Because some Umoja Robotics alumni work there!
                             </p>
                         </div>
                     </div>
@@ -1257,7 +1226,7 @@ const lessonData = {
                         <h3>📺 Professional CAD & Measurement Training</h3>
                         
                         <div class="video-intro">
-                            <p><strong>Learn from the pros!</strong> This comprehensive training covers advanced measurement techniques and CAD fundamentals used by championship FRC teams and professional engineers.</p>
+                            <p><strong>Learn from the pros!</strong> This comprehensive training covers advanced measurement techniques and CAD fundamentals used by championship teams like Umoja Robotics and professional engineers.</p>
                             
                             <div class="video-highlights">
                                 <h4>🎯 Video Series Coverage:</h4>
@@ -1266,7 +1235,7 @@ const lessonData = {
                                     <li>CAD software interface and navigation</li>
                                     <li>Parametric modeling fundamentals</li>
                                     <li>Professional drawing standards and documentation</li>
-                                    <li>Real FRC part modeling demonstrations</li>
+                                    <li>Real Umoja Robotics part modeling demonstrations</li>
                                 </ul>
                             </div>
                         </div>
@@ -1295,7 +1264,7 @@ const lessonData = {
                         </div>
                         
                         <div class="post-video-action">
-                            <p><em>After watching, we'll apply these techniques hands-on with real FRC components!</em></p>
+                            <p><em>After watching, we'll apply these techniques hands-on with real Umoja Robotics components!</em></p>
                         </div>
                     </div>
                 `
@@ -1305,7 +1274,7 @@ const lessonData = {
 
     3: {
         title: "Week 3: Fasteners & Hardware",
-        duration: "4-6 hours",
+        duration: "lesson",
         steps: [
             {
                 title: "🎯 Objectives & Lesson Notes",
@@ -1397,7 +1366,7 @@ const lessonData = {
                             </div>
                             
                             <div class="objective-section robotics">
-                                <h5>🤖 FRC-Specific Hardware Knowledge</h5>
+                                <h5>🤖 Umoja Robotics Hardware Knowledge</h5>
                                 <ul>
                                     <li>Apply FIRST hardware rules and regulations</li>
                                     <li>Select fasteners for weight optimization</li>
@@ -1414,7 +1383,7 @@ const lessonData = {
 
     4: {
         title: "Week 4: Mechanisms & Motion",
-        duration: "4-6 hours",
+        duration: "lesson",
         steps: [
             {
                 title: "🎯 Objectives & Lesson Notes",
@@ -1478,7 +1447,7 @@ const lessonData = {
                     <div class="lesson-section">
                         <h3>Week 4: Mechanisms & Motion Systems ⚙️🎯</h3>
                         <div class="welcome-message">
-                            <p><strong>Bring robots to life with motion!</strong> Today we master the gear trains, linkages, and motion systems that transform motor power into championship-winning robot actions. Every great FRC robot starts with brilliantly designed mechanisms!</p>
+                            <p><strong>Bring robots to life with motion!</strong> Today we master the gear trains, linkages, and motion systems that transform motor power into championship-winning robot actions. Every great Umoja Robotics robot starts with brilliantly designed mechanisms!</p>
                         </div>
                         
                         <div class="objectives-card">
@@ -1501,12 +1470,12 @@ const lessonData = {
                                     <li>Build and test various gear train configurations</li>
                                     <li>Design belt and chain drive systems</li>
                                     <li>Create linkage mechanisms for specific motions</li>
-                                    <li>Optimize mechanisms for FRC constraints</li>
+                                    <li>Optimize mechanisms for Umoja Robotics constraints</li>
                                 </ul>
                             </div>
                             
                             <div class="objective-section robotics">
-                                <h5>🤖 FRC Mechanism Applications</h5>
+                                <h5>🤖 Umoja Robotics Mechanism Applications</h5>
                                 <ul>
                                     <li>Design drivetrains for speed and control</li>
                                     <li>Create manipulator mechanisms for game pieces</li>
@@ -1523,7 +1492,7 @@ const lessonData = {
 
     5: {
         title: "Week 5: Structural Design & Materials",
-        duration: "4-6 hours",
+        duration: "lesson",
         steps: [
             {
                 title: "🎯 Objectives & Lesson Notes",
@@ -1587,7 +1556,7 @@ const lessonData = {
                     <div class="lesson-section">
                         <h3>Week 5: Structural Design & Materials Engineering 🏗️📐</h3>
                         <div class="welcome-message">
-                            <p><strong>Build frames that withstand competition forces!</strong> Today we master structural analysis and materials selection that ensure your robot survives the most intense FRC matches. Learn the engineering principles behind championship-winning robot frames!</p>
+                            <p><strong>Build frames that withstand competition forces!</strong> Today we master structural analysis and materials selection that ensure your robot survives the most intense robotics matches. Learn the engineering principles behind championship-winning robot frames!</p>
                         </div>
                         
                         <div class="objectives-card">
@@ -1620,7 +1589,7 @@ const lessonData = {
                                     <li>Create robust frame architectures</li>
                                     <li>Design for manufacturing and assembly</li>
                                     <li>Implement design for testability</li>
-                                    <li>Apply aerospace design principles to FRC</li>
+                                    <li>Apply aerospace design principles to Umoja Robotics</li>
                                 </ul>
                             </div>
                         </div>
@@ -1632,7 +1601,7 @@ const lessonData = {
 
     6: {
         title: "Week 6: Manufacturing & Assembly",
-        duration: "4-6 hours",
+        duration: "lesson",
         steps: [
             {
                 title: "🎯 Objectives & Lesson Notes",
@@ -1696,7 +1665,7 @@ const lessonData = {
                     <div class="lesson-section">
                         <h3>Week 6: Manufacturing & Assembly Excellence 🏭⚙️</h3>
                         <div class="welcome-message">
-                            <p><strong>Transform designs into championship robots!</strong> Today we master the manufacturing processes and assembly techniques that bring CAD models to life. Learn the production methods used by top FRC teams to build winning robots!</p>
+                            <p><strong>Transform designs into championship robots!</strong> Today we master the manufacturing processes and assembly techniques that bring CAD models to life. Learn the production methods used by top teams like Umoja Robotics to build winning robots!</p>
                         </div>
                         
                         <div class="objectives-card">
@@ -1741,7 +1710,7 @@ const lessonData = {
 
     7: {
         title: "Week 7: Integration, Testing & Competition",
-        duration: "4-6 hours",
+        duration: "lesson",
         steps: [
             {
                 title: "🎯 Objectives & Lesson Notes",
@@ -1805,12 +1774,12 @@ const lessonData = {
                     <div class="lesson-section">
                         <h3>Week 7: Integration, Testing & Competition Mastery 🏆🤖</h3>
                         <div class="welcome-message">
-                            <p><strong>The culmination of your FRC engineering journey!</strong> Today we integrate all systems, test for peak performance, and prepare for competition success. Transform from student to championship-level FRC engineer!</p>
+                            <p><strong>The culmination of your Umoja Robotics engineering journey!</strong> Today we integrate all systems, test for peak performance, and prepare for competition success. Transform from student to championship-level Umoja Robotics engineer!</p>
                         </div>
                         
                         <div class="objectives-card">
                             <h4>🎯 Championship Preparation Goals</h4>
-                            <p><strong>Complete your transformation into an FRC champion:</strong></p>
+                            <p><strong>Complete your transformation into a Umoja Robotics champion:</strong></p>
                             
                             <div class="objective-section integration">
                                 <h5>🔗 Systems Integration Mastery</h5>
@@ -1847,14 +1816,14 @@ const lessonData = {
                             <h4>🎓 Your Engineering Journey Complete</h4>
                             <div style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); padding: 20px; border-radius: 10px; color: #8B4513; margin: 20px 0;">
                                 <p><strong>Congratulations, Engineer!</strong></p>
-                                <p>You've mastered the complete FRC mechanical engineering curriculum. You're now equipped with the knowledge, skills, and confidence to:</p>
+                                <p>You've mastered the complete Umoja Robotics mechanical engineering curriculum. You're now equipped with the knowledge, skills, and confidence to:</p>
                                 <ul>
                                     <li>✅ Lead robot design and construction projects</li>
                                     <li>✅ Mentor new team members with expertise</li>
                                     <li>✅ Make critical engineering decisions under pressure</li>
                                     <li>✅ Pursue advanced engineering education and careers</li>
                                 </ul>
-                                <p><em>Welcome to the ranks of FRC Champions! The future of robotics is in your hands.</em></p>
+                                <p><em>Welcome to the ranks of Umoja Robotics Champions! The future of robotics is in your hands.</em></p>
                             </div>
                         </div>
                     </div>
@@ -2068,3 +2037,181 @@ window.onclick = function(event) {
         closeVideoModal();
     }
 }
+
+// Student Sign-In System
+let currentStudent = null;
+
+function signInStudent() {
+    const nameInput = document.getElementById('student-name');
+    const name = nameInput.value.trim();
+    
+    if (!name) {
+        alert('Please enter your name to continue');
+        return;
+    }
+    
+    if (name.length < 2) {
+        alert('Please enter your full name');
+        return;
+    }
+    
+    currentStudent = {
+        name: name,
+        signInTime: new Date().toISOString(),
+        progress: {
+            week1: {
+                started: false,
+                completed: false,
+                stepsCompleted: [],
+                timeSpent: 0
+            }
+        }
+    };
+    
+    // Save to localStorage with student name as key
+    const storageKey = 'umoja_student_' + name.toLowerCase().replace(/\s+/g, '_');
+    const existingData = localStorage.getItem(storageKey);
+    
+    if (existingData) {
+        currentStudent = JSON.parse(existingData);
+        currentStudent.lastSignIn = new Date().toISOString();
+    }
+    
+    localStorage.setItem(storageKey, JSON.stringify(currentStudent));
+    localStorage.setItem('umoja_current_student', storageKey);
+    
+    // Show main dashboard
+    document.getElementById('student-signin').style.display = 'none';
+    document.getElementById('main-dashboard').style.display = 'block';
+    document.getElementById('student-display-name').textContent = currentStudent.name;
+    
+    // Track sign-in
+    trackStudentActivity('signed_in', { student: currentStudent.name });
+    
+    console.log('Student signed in:', currentStudent.name);
+}
+
+function signOutStudent() {
+    if (currentStudent) {
+        trackStudentActivity('signed_out', { 
+            student: currentStudent.name,
+            sessionDuration: Date.now() - new Date(currentStudent.signInTime).getTime()
+        });
+    }
+    
+    localStorage.removeItem('umoja_current_student');
+    currentStudent = null;
+    
+    // Show sign-in form
+    document.getElementById('main-dashboard').style.display = 'none';
+    document.getElementById('student-signin').style.display = 'block';
+    document.getElementById('student-name').value = '';
+}
+
+function trackStudentActivity(action, data = {}) {
+    const activity = {
+        student: currentStudent?.name || 'anonymous',
+        action: action,
+        timestamp: new Date().toISOString(),
+        data: data
+    };
+    
+    // Store activity log
+    const activities = JSON.parse(localStorage.getItem('umoja_activity_log') || '[]');
+    activities.push(activity);
+    
+    // Keep only last 100 activities
+    if (activities.length > 100) {
+        activities.splice(0, activities.length - 100);
+    }
+    
+    localStorage.setItem('umoja_activity_log', JSON.stringify(activities));
+    
+    console.log('Activity tracked:', activity);
+}
+
+function updateStudentProgress(week, step, completed = true) {
+    if (!currentStudent) return;
+    
+    if (!currentStudent.progress[`week${week}`]) {
+        currentStudent.progress[`week${week}`] = {
+            started: false,
+            completed: false,
+            stepsCompleted: [],
+            timeSpent: 0
+        };
+    }
+    
+    const weekProgress = currentStudent.progress[`week${week}`];
+    weekProgress.started = true;
+    
+    if (completed && !weekProgress.stepsCompleted.includes(step)) {
+        weekProgress.stepsCompleted.push(step);
+    }
+    
+    // Save updated progress
+    const storageKey = localStorage.getItem('umoja_current_student');
+    if (storageKey) {
+        localStorage.setItem(storageKey, JSON.stringify(currentStudent));
+    }
+    
+    trackStudentActivity('progress_update', {
+        week: week,
+        step: step,
+        completed: completed,
+        totalSteps: weekProgress.stepsCompleted.length
+    });
+}
+
+// Check for existing student session on page load
+function checkExistingSession() {
+    const currentStudentKey = localStorage.getItem('umoja_current_student');
+    if (currentStudentKey) {
+        const studentData = localStorage.getItem(currentStudentKey);
+        if (studentData) {
+            currentStudent = JSON.parse(studentData);
+            currentStudent.lastSignIn = new Date().toISOString();
+            
+            // Show main dashboard
+            document.getElementById('student-signin').style.display = 'none';
+            document.getElementById('main-dashboard').style.display = 'block';
+            document.getElementById('student-display-name').textContent = currentStudent.name;
+            
+            // Update stored data
+            localStorage.setItem(currentStudentKey, JSON.stringify(currentStudent));
+            
+            console.log('Existing session found for:', currentStudent.name);
+        }
+    }
+}
+
+// Override the existing openInteractiveLesson function to track student progress
+const originalOpenLesson = window.openInteractiveLesson;
+window.openInteractiveLesson = function(lessonId) {
+    if (!currentStudent) {
+        alert('Please sign in first to access lessons');
+        return;
+    }
+    
+    if (lessonId > 1) {
+        alert('This lesson is coming soon! Please complete Week 1 first.');
+        return;
+    }
+    
+    trackStudentActivity('lesson_started', { lesson: lessonId });
+    updateStudentProgress(lessonId, 'started');
+    
+    return originalOpenLesson(lessonId);
+};
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+    checkExistingSession();
+    
+    // Add Enter key support for sign-in
+    document.getElementById('student-name')?.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            signInStudent();
+        }
+    });
+});
