@@ -46,6 +46,8 @@ function closeResourceModal(closeBtn) {
     modal.remove();
 }
 
+
+
 function getSafetyProtocolsContent() {
     return `
         <div class="safety-content">
@@ -2295,6 +2297,227 @@ function openBasicToolsVideo() {
     openYouTubeVideo('VNwhQkAyRHk', 'Basic Hand Tools Every Beginner Should Know');
 }
 
+// Quiz functionality
+function startQuiz(quizNumber) {
+    if (quizNumber === 1) {
+        // Check if Week 1 is completed
+        const week1Completed = completedLessons.includes(1);
+        if (!week1Completed) {
+            alert('Please complete Week 1 lesson before taking the quiz.');
+            return;
+        }
+        openQuizModal(quizNumber);
+    } else {
+        alert(`Quiz ${quizNumber} will be available after completing Week ${quizNumber} lesson.`);
+    }
+}
+
+function openQuizModal(quizNumber) {
+    const modal = document.getElementById('quiz-modal');
+    const quizTitle = document.getElementById('quiz-title');
+    const quizContent = document.getElementById('quiz-content');
+    
+    if (modal && quizTitle && quizContent) {
+        quizTitle.textContent = `Week ${quizNumber} Quiz`;
+        
+        // Sample quiz content for Week 1
+        if (quizNumber === 1) {
+            quizContent.innerHTML = getWeek1QuizContent();
+        }
+        
+        modal.style.display = 'block';
+        updateQuizProgress(1, 7); // Start with question 1 of 7
+    }
+}
+
+function getWeek1QuizContent() {
+    return `
+        <div class="quiz-question active" data-question="1">
+            <h4>Question 1 of 7</h4>
+            <p><strong>What must you ALWAYS wear in the workshop?</strong></p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q1" value="a"> Baseball cap</label>
+                <label><input type="radio" name="q1" value="b"> Safety glasses</label>
+                <label><input type="radio" name="q1" value="c"> Headphones</label>
+            </div>
+        </div>
+        
+        <div class="quiz-question" data-question="2">
+            <h4>Question 2 of 7</h4>
+            <p><strong>Which tool is used for precise measurements?</strong></p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q2" value="a"> Hammer</label>
+                <label><input type="radio" name="q2" value="b"> Screwdriver</label>
+                <label><input type="radio" name="q2" value="c"> Calipers</label>
+            </div>
+        </div>
+        
+        <div class="quiz-question" data-question="3">
+            <h4>Question 3 of 7</h4>
+            <p><strong>What should you do before using any power tool?</strong></p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q3" value="a"> Check for damage and get mentor supervision</label>
+                <label><input type="radio" name="q3" value="b"> Use it immediately</label>
+                <label><input type="radio" name="q3" value="c"> Clean it first</label>
+            </div>
+        </div>
+        
+        <div class="quiz-question" data-question="4">
+            <h4>Question 4 of 7</h4>
+            <p><strong>Which measurement tool is most accurate?</strong></p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q4" value="a"> Ruler</label>
+                <label><input type="radio" name="q4" value="b"> Tape measure</label>
+                <label><input type="radio" name="q4" value="c"> Digital calipers</label>
+            </div>
+        </div>
+        
+        <div class="quiz-question" data-question="5">
+            <h4>Question 5 of 7</h4>
+            <p><strong>What type of shoes are required in the workshop?</strong></p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q5" value="a"> Any shoes</label>
+                <label><input type="radio" name="q5" value="b"> Closed-toe shoes</label>
+                <label><input type="radio" name="q5" value="c"> Sandals are fine</label>
+            </div>
+        </div>
+        
+        <div class="quiz-question" data-question="6">
+            <h4>Question 6 of 7</h4>
+            <p><strong>What CAD software does Umoja Robotics use?</strong></p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q6" value="a"> AutoCAD</label>
+                <label><input type="radio" name="q6" value="b"> Onshape</label>
+                <label><input type="radio" name="q6" value="c"> SketchUp</label>
+            </div>
+        </div>
+        
+        <div class="quiz-question" data-question="7">
+            <h4>Question 7 of 7</h4>
+            <p><strong>If you're unsure about a safety procedure, you should:</strong></p>
+            <div class="quiz-options">
+                <label><input type="radio" name="q7" value="a"> Guess and try it</label>
+                <label><input type="radio" name="q7" value="b"> Ask a mentor</label>
+                <label><input type="radio" name="q7" value="c"> Skip the activity</label>
+            </div>
+        </div>
+        
+        <div class="quiz-navigation">
+            <button id="quiz-prev-btn" onclick="previousQuizQuestion()" disabled>Previous</button>
+            <button id="quiz-next-btn" onclick="nextQuizQuestion()">Next</button>
+            <button id="quiz-submit-btn" onclick="submitQuiz()" style="display: none;">Submit Quiz</button>
+        </div>
+    `;
+}
+
+let currentQuizQuestion = 1;
+const totalQuizQuestions = 7;
+
+function nextQuizQuestion() {
+    if (currentQuizQuestion < totalQuizQuestions) {
+        document.querySelector(`[data-question="${currentQuizQuestion}"]`).classList.remove('active');
+        currentQuizQuestion++;
+        document.querySelector(`[data-question="${currentQuizQuestion}"]`).classList.add('active');
+        updateQuizProgress(currentQuizQuestion, totalQuizQuestions);
+        updateQuizNavigation();
+    }
+}
+
+function previousQuizQuestion() {
+    if (currentQuizQuestion > 1) {
+        document.querySelector(`[data-question="${currentQuizQuestion}"]`).classList.remove('active');
+        currentQuizQuestion--;
+        document.querySelector(`[data-question="${currentQuizQuestion}"]`).classList.add('active');
+        updateQuizProgress(currentQuizQuestion, totalQuizQuestions);
+        updateQuizNavigation();
+    }
+}
+
+function updateQuizNavigation() {
+    const prevBtn = document.getElementById('quiz-prev-btn');
+    const nextBtn = document.getElementById('quiz-next-btn');
+    const submitBtn = document.getElementById('quiz-submit-btn');
+    
+    if (prevBtn) prevBtn.disabled = currentQuizQuestion === 1;
+    
+    if (currentQuizQuestion === totalQuizQuestions) {
+        if (nextBtn) nextBtn.style.display = 'none';
+        if (submitBtn) submitBtn.style.display = 'inline-block';
+    } else {
+        if (nextBtn) nextBtn.style.display = 'inline-block';
+        if (submitBtn) submitBtn.style.display = 'none';
+    }
+}
+
+function updateQuizProgress(current, total) {
+    const progressText = document.getElementById('quiz-progress-text');
+    const progressFill = document.getElementById('quiz-progress-fill');
+    
+    if (progressText) progressText.textContent = `Question ${current} of ${total}`;
+    if (progressFill) progressFill.style.width = `${(current / total) * 100}%`;
+}
+
+function submitQuiz() {
+    const answers = {
+        q1: 'b', // Safety glasses
+        q2: 'c', // Calipers
+        q3: 'a', // Check for damage and get mentor supervision
+        q4: 'c', // Digital calipers
+        q5: 'b', // Closed-toe shoes
+        q6: 'b', // Onshape
+        q7: 'b'  // Ask a mentor
+    };
+    
+    let score = 0;
+    let total = Object.keys(answers).length;
+    
+    for (let question in answers) {
+        const selected = document.querySelector(`input[name="${question}"]:checked`);
+        if (selected && selected.value === answers[question]) {
+            score++;
+        }
+    }
+    
+    const percentage = Math.round((score / total) * 100);
+    
+    alert(`Quiz Complete!\n\nYour Score: ${score}/${total} (${percentage}%)\n\n${percentage >= 80 ? 'Great job! You passed!' : 'Please review the material and try again.'}`);
+    
+    if (percentage >= 80) {
+        // Update quiz status
+        const quiz1Btn = document.getElementById('quiz1-btn');
+        const quiz1Status = document.getElementById('quiz1-status');
+        if (quiz1Btn) quiz1Btn.textContent = 'Retake Quiz';
+        if (quiz1Status) quiz1Status.textContent = `✅ Passed (${percentage}%)`;
+        if (quiz1Status) quiz1Status.className = 'quiz-status passed';
+    }
+    
+    closeQuiz();
+}
+
+function closeQuiz() {
+    const modal = document.getElementById('quiz-modal');
+    if (modal) {
+        modal.style.display = 'none';
+        currentQuizQuestion = 1; // Reset for next time
+    }
+}
+
+function enableQuiz1() {
+    const quiz1Btn = document.getElementById('quiz1-btn');
+    const quiz1Status = document.getElementById('quiz1-status');
+    
+    if (quiz1Btn) {
+        quiz1Btn.disabled = false;
+        quiz1Btn.textContent = 'Start Quiz';
+        quiz1Btn.className = 'btn btn-primary';
+    }
+    
+    if (quiz1Status) {
+        quiz1Status.textContent = '✅ Available';
+        quiz1Status.className = 'quiz-status available';
+    }
+}
+
 // Quick access function
 function startCurrentLesson() {
     console.log('startCurrentLesson called');
@@ -2366,6 +2589,9 @@ function signInStudent() {
     document.getElementById('student-signin').style.display = 'none';
     document.getElementById('main-dashboard').style.display = 'block';
     document.getElementById('student-display-name').textContent = currentStudent.name;
+    
+    // Enable Quiz 1 for signed in students
+    enableQuiz1();
     
     // Track sign-in
     trackStudentActivity('signed_in', { student: currentStudent.name });

@@ -10,7 +10,21 @@
     <header class="lms-header">
         <div class="container">
             <div class="logo-section">
-                <div class="team-logo">
+                      <div class="                    <h3>🎥 Additional Learning Videos</h3>
+                    <ul class="resource-list">
+                        <li><button onclick="openYouTubeVideo('def5QH7UUIU', 'Robot Intakes Overview')" class="resource-link btn-link">🔄 Robot Intakes Overview</button></li>
+                        <li><button onclick="openYouTubeVideo('HdQ-mWPG9GY', 'Intake Design Concepts')" class="resource-link btn-link">🎯 Intake Design Concepts</button></li>
+                        <li><button onclick="openYouTubeVideo('5dS50DV7x9U', 'Advanced Intake Mechanisms')" class="resource-link btn-link">⚙️ Advanced Intake Mechanisms (1 min)</button></li>
+                        <li><button onclick="openYouTubeVideo('CUbA1NEPsdw', 'Intake Build Techniques')" class="resource-link btn-link">🔧 Intake Build Techniques (5 min)</button></li>
+                        <li><button onclick="openYouTubeVideo('JlKwRAvDue8', 'Intake Performance Tips')" class="resource-link btn-link">📈 Intake Performance Tips (5 min)</button></li>
+                    </ul>-category">
+                    <h3>🛠️ Tools & Software</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.onshape.com/en/education/" target="_blank" class="resource-link">💻 Onshape CAD Software (Free for Students)</a></li>
+                        <li><button onclick="openYouTubeVideo('Eyai_I-WNXM', 'Understanding Screws & Fasteners')" class="resource-link btn-link">📐 Understanding Screws & Fasteners</button></li>
+                        <li><button onclick="openYouTubeVideo('cyknxL-lIKo', 'FRC Safety Training Video')" class="resource-link btn-link">🛡️ FRC Safety Training Video</button></li>
+                    </ul>
+                </div>  <div class="team-logo">
                     <img src="umoja-logo.png" alt="Umoja 7712 FRC Robotics Team Logo" class="logo-image">
                     <div class="team-info">
                         <h1>Umoja 7712 FRC Robotics</h1>
@@ -406,11 +420,11 @@
                 <div class="resource-category">
                     <h3>📚 Robotics Mechanisms</h3>
                     <ul class="resource-list">
-                        <li><a href="https://www.youtube.com/watch?v=iZadt9wJaOo" target="_blank" class="resource-link">🪝 Climber in a Box (1 min)</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=G9H6aP9wJUs" target="_blank" class="resource-link">🪢 Rope Assembly for Climbing (3 min)</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=X4JHUDGzyv0" target="_blank" class="resource-link">🦀 Understanding Claws</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=orezTYhf6FM" target="_blank" class="resource-link">⬆️ Continuous Elevators (5 min)</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=zV4m8BtDQRI" target="_blank" class="resource-link">📏 Cascade Elevators (5 min)</a></li>
+                        <li><button onclick="openYouTubeVideo('iZadt9wJaOo', 'Climber in a Box')" class="resource-link btn-link">🪝 Climber in a Box (1 min)</button></li>
+                        <li><button onclick="openYouTubeVideo('G9H6aP9wJUs', 'Rope Assembly for Climbing')" class="resource-link btn-link">🪢 Rope Assembly for Climbing (3 min)</button></li>
+                        <li><button onclick="openYouTubeVideo('X4JHUDGzyv0', 'Understanding Claws')" class="resource-link btn-link">🦀 Understanding Claws</button></li>
+                        <li><button onclick="openYouTubeVideo('orezTYhf6FM', 'Continuous Elevators')" class="resource-link btn-link">⬆️ Continuous Elevators (5 min)</button></li>
+                        <li><button onclick="openYouTubeVideo('zV4m8BtDQRI', 'Cascade Elevators')" class="resource-link btn-link">📏 Cascade Elevators (5 min)</button></li>
                     </ul>
                 </div>
 
@@ -428,9 +442,9 @@
                 <div class="resource-category">
                     <h3>🚗 Drivetrain Systems</h3>
                     <ul class="resource-list">
-                        <li><a href="https://www.youtube.com/watch?v=mKcHXxC8aJY" target="_blank" class="resource-link">🔄 Mecanum Drive Explanation</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=FLnUZBHBczM" target="_blank" class="resource-link">🌟 Swerve Drive Overview</a></li>
-                        <li><a href="#" class="resource-link">🛠️ Tank Drive Fundamentals</a></li>
+                        <li><button onclick="openYouTubeVideo('mKcHXxC8aJY', 'Mecanum Drive Explanation')" class="resource-link btn-link">🔄 Mecanum Drive Explanation</button></li>
+                        <li><button onclick="openYouTubeVideo('FLnUZBHBczM', 'Swerve Drive Overview')" class="resource-link btn-link">🌟 Swerve Drive Overview</button></li>
+                        <li><button onclick="openYouTubeVideo('dQw4w9WgXcQ', 'Tank Drive Fundamentals')" class="resource-link btn-link">🛠️ Tank Drive Fundamentals</button></li>
                     </ul>
                 </div>
             </div>
@@ -720,6 +734,13 @@
             </div>
         </section>
     </main>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="video-modal">
+        <div id="video-modal-content" class="video-modal-content">
+            <!-- Video content will be loaded here -->
+        </div>
+    </div>
 
     <footer class="lms-footer">
         <div class="container">
