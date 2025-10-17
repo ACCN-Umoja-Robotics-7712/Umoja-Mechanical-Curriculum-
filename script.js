@@ -498,19 +498,27 @@ function selectQuizOption(element, isCorrect) {
 }
 
 function checkQuizAnswers() {
+    console.log('checkQuizAnswers called');
+    
     // Find all question containers (both .quiz-question and .question)
     const quizQuestions = document.querySelectorAll('.quiz-question');
     const generalQuestions = document.querySelectorAll('.question');
     const allQuestions = [...quizQuestions, ...generalQuestions];
     
+    console.log('Found quiz questions:', quizQuestions.length);
+    console.log('Found general questions:', generalQuestions.length);
+    console.log('Total questions:', allQuestions.length);
+    
     let correct = 0;
     let total = allQuestions.length;
     
-    allQuestions.forEach(question => {
+    allQuestions.forEach((question, index) => {
         const selectedOption = question.querySelector('.quiz-option.selected');
+        console.log(`Question ${index + 1}: selected option:`, selectedOption);
         
         if (selectedOption) {
             const isCorrect = selectedOption.getAttribute('data-correct') === 'true';
+            console.log(`Question ${index + 1}: is correct:`, isCorrect);
             if (isCorrect) {
                 correct++;
             }
@@ -528,22 +536,35 @@ function checkQuizAnswers() {
         message = 'Keep studying!';
     }
     
+    console.log(`Final score: ${correct}/${total} (${percentage}%) - ${message}`);
+    
     // Try both possible score display elements
     const scoreElement = document.getElementById('quiz-score') || document.getElementById('final-score');
     if (scoreElement) {
         scoreElement.innerHTML = `Score: ${correct}/${total} (${percentage}%) - ${message}`;
+        console.log('Score displayed in element:', scoreElement);
+    } else {
+        console.error('Could not find score display element');
     }
 }
 
 function selectQuizOption(element, isCorrect) {
+    console.log('selectQuizOption called', element, isCorrect);
+    
     // Remove previous selection in this question
     const question = element.closest('.quiz-question') || element.closest('.question');
+    console.log('Found question container:', question);
+    
     if (question) {
         const options = question.querySelectorAll('.quiz-option');
+        console.log('Found options:', options.length);
         options.forEach(opt => opt.classList.remove('selected'));
         
         // Add selection to clicked option
         element.classList.add('selected');
+        console.log('Added selected class to:', element);
+    } else {
+        console.error('Could not find question container');
     }
 }
 
