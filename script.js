@@ -943,72 +943,72 @@ const lessonData = {
                             <div class="quiz-question" data-question="3">
                                 <h5>3. Which tool is best for measuring distances over 12 inches?</h5>
                                 <div class="quiz-options">
-                                    <div class="quiz-option" data-correct="false">A) Ruler</div>
-                                    <div class="quiz-option" data-correct="true">B) Tape measure</div>
-                                    <div class="quiz-option" data-correct="false">C) Calipers</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) Ruler</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">B) Tape measure</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">C) Calipers</div>
                                 </div>
                             </div>
                             
                             <div class="quiz-question" data-question="4">
                                 <h5>4. What should you do before using any tool?</h5>
                                 <div class="quiz-options">
-                                    <div class="quiz-option" data-correct="true">A) Inspect it for damage</div>
-                                    <div class="quiz-option" data-correct="false">B) Use it immediately</div>
-                                    <div class="quiz-option" data-correct="false">C) Clean it first</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">A) Inspect it for damage</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">B) Use it immediately</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">C) Clean it first</div>
                                 </div>
                             </div>
                             
                             <div class="quiz-question" data-question="5">
                                 <h5>5. What is the maximum safe lifting weight for students?</h5>
                                 <div class="quiz-options">
-                                    <div class="quiz-option" data-correct="false">A) 50 lbs</div>
-                                    <div class="quiz-option" data-correct="true">B) 25 lbs</div>
-                                    <div class="quiz-option" data-correct="false">C) 100 lbs</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) 50 lbs</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">B) 25 lbs</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">C) 100 lbs</div>
                                 </div>
                             </div>
                             
                             <div class="quiz-question" data-question="6">
                                 <h5>6. Which type of footwear is required in the workshop?</h5>
                                 <div class="quiz-options">
-                                    <div class="quiz-option" data-correct="false">A) Sandals</div>
-                                    <div class="quiz-option" data-correct="false">B) Open-toe shoes</div>
-                                    <div class="quiz-option" data-correct="true">C) Closed-toe shoes</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) Sandals</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">B) Open-toe shoes</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">C) Closed-toe shoes</div>
                                 </div>
                             </div>
                             
                             <div class="quiz-question" data-question="7">
                                 <h5>7. What should you do if you see an unsafe condition?</h5>
                                 <div class="quiz-options">
-                                    <div class="quiz-option" data-correct="false">A) Ignore it</div>
-                                    <div class="quiz-option" data-correct="true">B) Report it immediately</div>
-                                    <div class="quiz-option" data-correct="false">C) Fix it yourself</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) Ignore it</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">B) Report it immediately</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">C) Fix it yourself</div>
                                 </div>
                             </div>
                             
                             <div class="quiz-question" data-question="8">
                                 <h5>8. Which tool is most precise for small measurements?</h5>
                                 <div class="quiz-options">
-                                    <div class="quiz-option" data-correct="false">A) Tape measure</div>
-                                    <div class="quiz-option" data-correct="false">B) Ruler</div>
-                                    <div class="quiz-option" data-correct="true">C) Calipers</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) Tape measure</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">B) Ruler</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">C) Calipers</div>
                                 </div>
                             </div>
                             
                             <div class="quiz-question" data-question="9">
                                 <h5>9. What must every robot have for safety?</h5>
                                 <div class="quiz-options">
-                                    <div class="quiz-option" data-correct="false">A) Bright colors</div>
-                                    <div class="quiz-option" data-correct="true">B) Emergency stop button</div>
-                                    <div class="quiz-option" data-correct="false">C) Warning labels</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) Bright colors</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">B) Emergency stop button</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">C) Warning labels</div>
                                 </div>
                             </div>
                             
                             <div class="quiz-question" data-question="10">
                                 <h5>10. When should you wear headphones in the workshop?</h5>
                                 <div class="quiz-options">
-                                    <div class="quiz-option" data-correct="false">A) During machine operation</div>
-                                    <div class="quiz-option" data-correct="false">B) When working with tools</div>
-                                    <div class="quiz-option" data-correct="true">C) Never during workshop activities</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) During machine operation</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">B) When working with tools</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">C) Never during workshop activities</div>
                                 </div>
                             </div>
                         </div>
@@ -1421,18 +1421,18 @@ const lessonData = {
                                 <div class="question" style="background: #ffebee; padding: 15px; border-radius: 8px; margin: 10px 0;">
                                     <h6>1. When working in the shop, you must ALWAYS wear:</h6>
                                     <div class="quiz-options">
-                                        <div class="quiz-option" data-correct="false">A) Closed-toe shoes only</div>
-                                        <div class="quiz-option" data-correct="true">B) Safety glasses at all times</div>
-                                        <div class="quiz-option" data-correct="false">C) Gloves when handling wood</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) Closed-toe shoes only</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">B) Safety glasses at all times</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">C) Gloves when handling wood</div>
                                     </div>
                                 </div>
                                 
                                 <div class="question" style="background: #ffebee; padding: 15px; border-radius: 8px; margin: 10px 0;">
                                     <h6>2. If you see a fire in the workshop, your FIRST action should be:</h6>
                                     <div class="quiz-options">
-                                        <div class="quiz-option" data-correct="false">A) Try to put it out yourself</div>
-                                        <div class="quiz-option" data-correct="true">B) Alert others and evacuate if necessary</div>
-                                        <div class="quiz-option" data-correct="false">C) Continue working if it's small</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) Try to put it out yourself</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">B) Alert others and evacuate if necessary</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">C) Continue working if it's small</div>
                                     </div>
                                 </div>
                             </div>
@@ -1443,27 +1443,27 @@ const lessonData = {
                                 <div class="question" style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin: 10px 0;">
                                     <h6>3. For measuring the thickness of a sheet of aluminum (0.063"), which tool provides the best accuracy?</h6>
                                     <div class="quiz-options">
-                                        <div class="quiz-option" data-correct="false">A) Ruler</div>
-                                        <div class="quiz-option" data-correct="true">B) Calipers</div>
-                                        <div class="quiz-option" data-correct="false">C) Tape measure</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) Ruler</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">B) Calipers</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">C) Tape measure</div>
                                     </div>
                                 </div>
                                 
                                 <div class="question" style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin: 10px 0;">
                                     <h6>4. You need to tighten a 10mm bolt. The best tool to use is:</h6>
                                     <div class="quiz-options">
-                                        <div class="quiz-option" data-correct="false">A) Adjustable wrench</div>
-                                        <div class="quiz-option" data-correct="true">B) 10mm box-end wrench</div>
-                                        <div class="quiz-option" data-correct="false">C) Phillips screwdriver</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) Adjustable wrench</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">B) 10mm box-end wrench</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">C) Phillips screwdriver</div>
                                     </div>
                                 </div>
                                 
                                 <div class="question" style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin: 10px 0;">
                                     <h6>5. The golden rule "measure twice, cut once" means:</h6>
                                     <div class="quiz-options">
-                                        <div class="quiz-option" data-correct="false">A) Always cut in two passes</div>
-                                        <div class="quiz-option" data-correct="true">B) Verify measurements before cutting to avoid waste</div>
-                                        <div class="quiz-option" data-correct="false">C) Use two different measuring tools</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) Always cut in two passes</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">B) Verify measurements before cutting to avoid waste</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">C) Use two different measuring tools</div>
                                     </div>
                                 </div>
                             </div>
@@ -1474,18 +1474,18 @@ const lessonData = {
                                 <div class="question" style="background: #e8f5e8; padding: 15px; border-radius: 8px; margin: 10px 0;">
                                     <h6>6. Your robot's arm needs to extend exactly 48 inches from the base. Which measurement approach is most appropriate?</h6>
                                     <div class="quiz-options">
-                                        <div class="quiz-option" data-correct="false">A) Estimate by eye</div>
-                                        <div class="quiz-option" data-correct="true">B) Use tape measure and verify with second measurement</div>
-                                        <div class="quiz-option" data-correct="false">C) Use multiple rulers end-to-end</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) Estimate by eye</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">B) Use tape measure and verify with second measurement</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">C) Use multiple rulers end-to-end</div>
                                     </div>
                                 </div>
                                 
                                 <div class="question" style="background: #e8f5e8; padding: 15px; border-radius: 8px; margin: 10px 0;">
                                     <h6>7. During competition, you need to quickly replace a stripped screw. What information do you need?</h6>
                                     <div class="quiz-options">
-                                        <div class="quiz-option" data-correct="false">A) Just the screw color</div>
-                                        <div class="quiz-option" data-correct="true">B) Thread size, length, and head type</div>
-                                        <div class="quiz-option" data-correct="false">C) Only the length</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) Just the screw color</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">B) Thread size, length, and head type</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">C) Only the length</div>
                                     </div>
                                 </div>
                             </div>
@@ -2437,16 +2437,26 @@ function buildStepNavigation(lesson) {
 }
 
 function showStep(stepIndex) {
+    console.log('showStep called with index:', stepIndex);
     currentStepIndex = stepIndex;
     const lesson = lessonData[currentLessonId];
+    console.log('Current lesson:', currentLessonId, 'Lesson data:', lesson);
     
     if (!lesson || !lesson.stepContent[stepIndex]) {
+        console.log('Content not found for step:', stepIndex);
         document.getElementById('lesson-main-content').innerHTML = '<p>Content not available for this step.</p>';
         return;
     }
     
+    console.log('Loading content for step:', stepIndex);
+    console.log('Content preview:', lesson.stepContent[stepIndex].content.substring(0, 100));
+    
     // Update content
     document.getElementById('lesson-main-content').innerHTML = lesson.stepContent[stepIndex].content;
+    
+    // After loading content, check if it contains quiz elements
+    const quizElements = document.querySelectorAll('.quiz-question, .question');
+    console.log('Quiz elements found after loading:', quizElements.length);
     
     // Update navigation
     document.querySelectorAll('.lesson-step').forEach((step, index) => {
