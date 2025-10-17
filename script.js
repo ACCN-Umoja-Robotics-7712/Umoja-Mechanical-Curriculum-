@@ -503,13 +503,15 @@ function checkQuizAnswers() {
     let total = questions.length;
     
     questions.forEach(question => {
-        const correctOption = question.querySelector('.quiz-option.correct.selected');
-        if (correctOption) {
+        const selectedOption = question.querySelector('.quiz-option.selected');
+        const correctOption = question.querySelector('.quiz-option.correct');
+        
+        if (selectedOption && selectedOption === correctOption) {
             correct++;
         }
     });
     
-    const percentage = Math.round((correct / total) * 100);
+    const percentage = total > 0 ? Math.round((correct / total) * 100) : 0;
     let message = '';
     
     if (percentage >= 80) {
@@ -521,6 +523,16 @@ function checkQuizAnswers() {
     }
     
     document.getElementById('quiz-score').innerHTML = `Score: ${correct}/${total} (${percentage}%) - ${message}`;
+}
+
+function selectQuizOption(element, isCorrect) {
+    // Remove previous selection in this question
+    const question = element.closest('.quiz-question');
+    const options = question.querySelectorAll('.quiz-option');
+    options.forEach(opt => opt.classList.remove('selected'));
+    
+    // Add selection to clicked option
+    element.classList.add('selected');
 }
 
 // Lesson data with all content
@@ -743,28 +755,227 @@ const lessonData = {
                     <div class="lesson-section">
                         <h3>👥 Group Assignment: Safety Practice</h3>
                         <p>Work in groups to practice safety procedures and identify basic tools.</p>
+                        
+                        <div class="group-activities">
+                            <div class="activity-card">
+                                <h4>🥽 Activity 1: Proper Safety Glasses Wearing</h4>
+                                <ul>
+                                    <li>Practice putting on safety glasses correctly</li>
+                                    <li>Check for proper fit and seal around eyes</li>
+                                    <li>Identify and fix common wearing mistakes</li>
+                                    <li>Test visibility and comfort during movement</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <h4>⚠️ Activity 2: Workshop Hazard Identification</h4>
+                                <ul>
+                                    <li>Walk around the workspace in pairs</li>
+                                    <li>Identify 5 potential safety hazards</li>
+                                    <li>Discuss how to avoid or mitigate each hazard</li>
+                                    <li>Present findings to the group</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <h4>🔧 Activity 3: Tool Safety Demonstration</h4>
+                                <ul>
+                                    <li>Each group chooses 3 different tools</li>
+                                    <li>Research proper handling techniques</li>
+                                    <li>Demonstrate safe usage to other groups</li>
+                                    <li>Explain potential dangers and safety measures</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="activity-card">
+                                <h4>🚨 Activity 4: Emergency Response Practice</h4>
+                                <ul>
+                                    <li>Learn locations of first aid kit and fire extinguisher</li>
+                                    <li>Practice basic emergency procedures</li>
+                                    <li>Role-play accident scenarios and proper response</li>
+                                    <li>Memorize emergency contact procedures</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 `
             },
             4: { // Knowledge Check
                 content: `
                     <div class="lesson-section">
-                        <h3>✅ Knowledge Check</h3>
-                        <p>Review what you've learned about safety and tools.</p>
+                        <h3>✅ Knowledge Check: 15 Critical Robotics Safety Facts</h3>
+                        
+                        <div class="safety-facts">
+                            <div class="fact-card">
+                                <span class="fact-number">1</span>
+                                <p><strong>Safety glasses are mandatory</strong> - Always wear ANSI Z87.1 approved safety glasses when in the workshop, even during demonstrations.</p>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <span class="fact-number">2</span>
+                                <p><strong>Tie back long hair</strong> - Long hair must be secured away from face and machinery to prevent entanglement.</p>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <span class="fact-number">3</span>
+                                <p><strong>No loose clothing</strong> - Avoid baggy sleeves, loose jewelry, or hanging accessories near rotating machinery.</p>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <span class="fact-number">4</span>
+                                <p><strong>Closed-toe shoes only</strong> - Never wear sandals or open-toe shoes in the workshop. Steel-toe boots are recommended.</p>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <span class="fact-number">5</span>
+                                <p><strong>Know your emergency stops</strong> - Every robot must have easily accessible emergency stop buttons that immediately cut all power.</p>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <span class="fact-number">6</span>
+                                <p><strong>Battery safety first</strong> - Always disconnect main battery before any electrical work. Use insulated tools when necessary.</p>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <span class="fact-number">7</span>
+                                <p><strong>Lifting technique matters</strong> - Use proper lifting posture: bend knees, straight back, get help for heavy items over 25 lbs.</p>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <span class="fact-number">8</span>
+                                <p><strong>Tool inspection required</strong> - Always inspect tools before use. Never use damaged, dull, or improper tools.</p>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <span class="fact-number">9</span>
+                                <p><strong>Clean workspace protocol</strong> - Keep work areas clean and organized. Store tools properly after each use.</p>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <span class="fact-number">10</span>
+                                <p><strong>Machine guards in place</strong> - Never operate machinery with guards removed. All rotating equipment must be properly guarded.</p>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <span class="fact-number">11</span>
+                                <p><strong>Focus and communication</strong> - No headphones during operation. Maintain clear communication with team members at all times.</p>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <span class="fact-number">12</span>
+                                <p><strong>Electrical safety zones</strong> - Establish 3-foot safety zones around electrical panels. Only qualified personnel may work on electrical systems.</p>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <span class="fact-number">13</span>
+                                <p><strong>Fire safety awareness</strong> - Know locations of fire extinguishers, exits, and evacuation procedures. Keep pathways clear.</p>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <span class="fact-number">14</span>
+                                <p><strong>Report all incidents</strong> - Immediately report any accidents, near-misses, or safety concerns to mentors, no matter how minor.</p>
+                            </div>
+                            
+                            <div class="fact-card">
+                                <span class="fact-number">15</span>
+                                <p><strong>Safety is everyone's responsibility</strong> - Each team member has the authority and obligation to stop work if unsafe conditions are observed.</p>
+                            </div>
+                        </div>
                     </div>
                 `
             },
             5: { // Simple Quiz
                 content: `
                     <div class="lesson-section">
-                        <h3>🧠 Simple Quiz</h3>
-                        <div class="quiz-container">
-                            <div class="question">
-                                <h5>What should you ALWAYS wear in the workshop?</h5>
+                        <h3>🧠 Simple Quiz - Safety & Tools Assessment</h3>
+                        <div class="quiz-container" id="simple-quiz">
+                            <div class="quiz-question" data-question="1">
+                                <h5>1. What should you ALWAYS wear in the workshop?</h5>
                                 <div class="quiz-options">
                                     <div class="quiz-option" onclick="selectQuizOption(this, false)">A) Baseball cap</div>
-                                    <div class="quiz-option" onclick="selectQuizOption(this, true)">B) Safety glasses</div>
+                                    <div class="quiz-option correct" onclick="selectQuizOption(this, true)">B) Safety glasses</div>
                                     <div class="quiz-option" onclick="selectQuizOption(this, false)">C) Headphones</div>
+                                </div>
+                            </div>
+                            
+                            <div class="quiz-question" data-question="2">
+                                <h5>2. What should you do with long hair in the workshop?</h5>
+                                <div class="quiz-options">
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)">A) Leave it loose</div>
+                                    <div class="quiz-option correct" onclick="selectQuizOption(this, true)">B) Tie it back securely</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)">C) Cover with a hat only</div>
+                                </div>
+                            </div>
+                            
+                            <div class="quiz-question" data-question="3">
+                                <h5>3. Which tool is best for measuring distances over 12 inches?</h5>
+                                <div class="quiz-options">
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)">A) Ruler</div>
+                                    <div class="quiz-option correct" onclick="selectQuizOption(this, true)">B) Tape measure</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)">C) Calipers</div>
+                                </div>
+                            </div>
+                            
+                            <div class="quiz-question" data-question="4">
+                                <h5>4. What should you do before using any tool?</h5>
+                                <div class="quiz-options">
+                                    <div class="quiz-option correct" onclick="selectQuizOption(this, true)">A) Inspect it for damage</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)">B) Use it immediately</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)">C) Clean it first</div>
+                                </div>
+                            </div>
+                            
+                            <div class="quiz-question" data-question="5">
+                                <h5>5. What is the maximum safe lifting weight for students?</h5>
+                                <div class="quiz-options">
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)">A) 50 lbs</div>
+                                    <div class="quiz-option correct" onclick="selectQuizOption(this, true)">B) 25 lbs</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)">C) 100 lbs</div>
+                                </div>
+                            </div>
+                            
+                            <div class="quiz-question" data-question="6">
+                                <h5>6. Which type of footwear is required in the workshop?</h5>
+                                <div class="quiz-options">
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)">A) Sandals</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)">B) Open-toe shoes</div>
+                                    <div class="quiz-option correct" onclick="selectQuizOption(this, true)">C) Closed-toe shoes</div>
+                                </div>
+                            </div>
+                            
+                            <div class="quiz-question" data-question="7">
+                                <h5>7. What should you do if you see an unsafe condition?</h5>
+                                <div class="quiz-options">
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)">A) Ignore it</div>
+                                    <div class="quiz-option correct" onclick="selectQuizOption(this, true)">B) Report it immediately</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)">C) Fix it yourself</div>
+                                </div>
+                            </div>
+                            
+                            <div class="quiz-question" data-question="8">
+                                <h5>8. Which tool is most precise for small measurements?</h5>
+                                <div class="quiz-options">
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)">A) Tape measure</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)">B) Ruler</div>
+                                    <div class="quiz-option correct" onclick="selectQuizOption(this, true)">C) Calipers</div>
+                                </div>
+                            </div>
+                            
+                            <div class="quiz-question" data-question="9">
+                                <h5>9. What must every robot have for safety?</h5>
+                                <div class="quiz-options">
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)">A) Bright colors</div>
+                                    <div class="quiz-option correct" onclick="selectQuizOption(this, true)">B) Emergency stop button</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)">C) Warning labels</div>
+                                </div>
+                            </div>
+                            
+                            <div class="quiz-question" data-question="10">
+                                <h5>10. When should you wear headphones in the workshop?</h5>
+                                <div class="quiz-options">
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)">A) During machine operation</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)">B) When working with tools</div>
+                                    <div class="quiz-option correct" onclick="selectQuizOption(this, true)">C) Never during workshop activities</div>
                                 </div>
                             </div>
                         </div>
@@ -1178,7 +1389,7 @@ const lessonData = {
                                     <h6>1. When working in the shop, you must ALWAYS wear:</h6>
                                     <div class="quiz-options">
                                         <div class="quiz-option" onclick="selectQuizOption(this, false)">A) Closed-toe shoes only</div>
-                                        <div class="quiz-option" onclick="selectQuizOption(this, true)">B) Safety glasses at all times</div>
+                                        <div class="quiz-option correct" onclick="selectQuizOption(this, true)">B) Safety glasses at all times</div>
                                         <div class="quiz-option" onclick="selectQuizOption(this, false)">C) Gloves when handling wood</div>
                                     </div>
                                 </div>
@@ -1187,7 +1398,7 @@ const lessonData = {
                                     <h6>2. If you see a fire in the workshop, your FIRST action should be:</h6>
                                     <div class="quiz-options">
                                         <div class="quiz-option" onclick="selectQuizOption(this, false)">A) Try to put it out yourself</div>
-                                        <div class="quiz-option" onclick="selectQuizOption(this, true)">B) Alert others and evacuate if necessary</div>
+                                        <div class="quiz-option correct" onclick="selectQuizOption(this, true)">B) Alert others and evacuate if necessary</div>
                                         <div class="quiz-option" onclick="selectQuizOption(this, false)">C) Continue working if it's small</div>
                                     </div>
                                 </div>
@@ -1200,8 +1411,8 @@ const lessonData = {
                                     <h6>3. For measuring the thickness of a sheet of aluminum (0.063"), which tool provides the best accuracy?</h6>
                                     <div class="quiz-options">
                                         <div class="quiz-option" onclick="selectQuizOption(this, false)">A) Ruler</div>
-                                        <div class="quiz-option" onclick="selectQuizOption(this, false)">B) Tape measure</div>
-                                        <div class="quiz-option" onclick="selectQuizOption(this, true)">C) Calipers</div>
+                                        <div class="quiz-option correct" onclick="selectQuizOption(this, true)">B) Calipers</div>
+                                        <div class="quiz-option" onclick="selectQuizOption(this, false)">C) Tape measure</div>
                                     </div>
                                 </div>
                                 
@@ -1209,7 +1420,7 @@ const lessonData = {
                                     <h6>4. You need to tighten a 10mm bolt. The best tool to use is:</h6>
                                     <div class="quiz-options">
                                         <div class="quiz-option" onclick="selectQuizOption(this, false)">A) Adjustable wrench</div>
-                                        <div class="quiz-option" onclick="selectQuizOption(this, true)">B) 10mm box-end wrench</div>
+                                        <div class="quiz-option correct" onclick="selectQuizOption(this, true)">B) 10mm box-end wrench</div>
                                         <div class="quiz-option" onclick="selectQuizOption(this, false)">C) Phillips screwdriver</div>
                                     </div>
                                 </div>
@@ -1218,7 +1429,7 @@ const lessonData = {
                                     <h6>5. The golden rule "measure twice, cut once" means:</h6>
                                     <div class="quiz-options">
                                         <div class="quiz-option" onclick="selectQuizOption(this, false)">A) Always cut in two passes</div>
-                                        <div class="quiz-option" onclick="selectQuizOption(this, true)">B) Verify measurements before cutting to avoid waste</div>
+                                        <div class="quiz-option correct" onclick="selectQuizOption(this, true)">B) Verify measurements before cutting to avoid waste</div>
                                         <div class="quiz-option" onclick="selectQuizOption(this, false)">C) Use two different measuring tools</div>
                                     </div>
                                 </div>
@@ -1231,7 +1442,7 @@ const lessonData = {
                                     <h6>6. Your robot's arm needs to extend exactly 48 inches from the base. Which measurement approach is most appropriate?</h6>
                                     <div class="quiz-options">
                                         <div class="quiz-option" onclick="selectQuizOption(this, false)">A) Estimate by eye</div>
-                                        <div class="quiz-option" onclick="selectQuizOption(this, true)">B) Use tape measure and verify with second measurement</div>
+                                        <div class="quiz-option correct" onclick="selectQuizOption(this, true)">B) Use tape measure and verify with second measurement</div>
                                         <div class="quiz-option" onclick="selectQuizOption(this, false)">C) Use multiple rulers end-to-end</div>
                                     </div>
                                 </div>
@@ -1240,7 +1451,7 @@ const lessonData = {
                                     <h6>7. During competition, you need to quickly replace a stripped screw. What information do you need?</h6>
                                     <div class="quiz-options">
                                         <div class="quiz-option" onclick="selectQuizOption(this, false)">A) Just the screw color</div>
-                                        <div class="quiz-option" onclick="selectQuizOption(this, true)">B) Thread size, length, and head type</div>
+                                        <div class="quiz-option correct" onclick="selectQuizOption(this, true)">B) Thread size, length, and head type</div>
                                         <div class="quiz-option" onclick="selectQuizOption(this, false)">C) Only the length</div>
                                     </div>
                                 </div>
