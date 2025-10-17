@@ -1029,8 +1029,9 @@ body {
 
 /* Quiz Styles */
 .quiz-question {
-    display: none;
+    display: block;
     padding: 20px;
+    margin: 15px 0;
 }
 
 .quiz-question.active {
