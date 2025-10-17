@@ -2294,7 +2294,7 @@ function closeLessonViewer() {
 
 // Additional tool video function
 function openBasicToolsVideo() {
-    openYouTubeVideo('VNwhQkAyRHk', 'Basic Hand Tools Every Beginner Should Know');
+    openYouTubeVideo('Eyai_I-WNXM', 'Understanding Screws & Fasteners - Basic Workshop Tools');
 }
 
 // Quiz functionality
