@@ -1929,6 +1929,20 @@ body {
     border: 2px solid #dc3545;
 }
 
+/* Style for general question containers */
+.question {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.question h6 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
 .resource-links {
     background: #f8f9fa;
     padding: 20px;

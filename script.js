@@ -498,11 +498,15 @@ function selectQuizOption(element, isCorrect) {
 }
 
 function checkQuizAnswers() {
-    const questions = document.querySelectorAll('.quiz-question');
-    let correct = 0;
-    let total = questions.length;
+    // Find all question containers (both .quiz-question and .question)
+    const quizQuestions = document.querySelectorAll('.quiz-question');
+    const generalQuestions = document.querySelectorAll('.question');
+    const allQuestions = [...quizQuestions, ...generalQuestions];
     
-    questions.forEach(question => {
+    let correct = 0;
+    let total = allQuestions.length;
+    
+    allQuestions.forEach(question => {
         const selectedOption = question.querySelector('.quiz-option.selected');
         
         if (selectedOption) {
@@ -524,17 +528,23 @@ function checkQuizAnswers() {
         message = 'Keep studying!';
     }
     
-    document.getElementById('quiz-score').innerHTML = `Score: ${correct}/${total} (${percentage}%) - ${message}`;
+    // Try both possible score display elements
+    const scoreElement = document.getElementById('quiz-score') || document.getElementById('final-score');
+    if (scoreElement) {
+        scoreElement.innerHTML = `Score: ${correct}/${total} (${percentage}%) - ${message}`;
+    }
 }
 
 function selectQuizOption(element, isCorrect) {
     // Remove previous selection in this question
-    const question = element.closest('.quiz-question');
-    const options = question.querySelectorAll('.quiz-option');
-    options.forEach(opt => opt.classList.remove('selected'));
-    
-    // Add selection to clicked option
-    element.classList.add('selected');
+    const question = element.closest('.quiz-question') || element.closest('.question');
+    if (question) {
+        const options = question.querySelectorAll('.quiz-option');
+        options.forEach(opt => opt.classList.remove('selected'));
+        
+        // Add selection to clicked option
+        element.classList.add('selected');
+    }
 }
 
 // Lesson data with all content
