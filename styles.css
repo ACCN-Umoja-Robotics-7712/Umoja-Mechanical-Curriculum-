@@ -2731,11 +2731,6 @@ body {
     transform: translateX(5px);
 }
 
-.quiz-option.correct.selected {
-    background: var(--success);
-    border-color: #1e7e34;
-}
-
 /* Hero tagline styling */
 .hero-tagline {
     font-size: 1.1em;
