@@ -2575,24 +2575,94 @@ function openQuizModal(quizNumber) {
     console.log('Quiz title element:', quizTitle);
     console.log('Quiz content element:', quizContent);
     
-    if (modal && quizTitle && quizContent) {
-        quizTitle.textContent = `Week ${quizNumber} Quiz`;
-        
-        // Sample quiz content for Week 1
-        if (quizNumber === 1) {
-            const content = getWeek1QuizContent();
-            console.log('Quiz content generated, length:', content.length);
-            quizContent.innerHTML = content;
+    // Instead of modal, render all questions in the main quiz card
+    if (quizNumber === 1) {
+        const quizCard = document.querySelector('.quiz-card[data-quiz="1"]');
+        if (quizCard) {
+            quizCard.innerHTML = `
+                <h3>🧠 Week 1 Quiz: Safety & Tools</h3>
+                <form id="week1-quiz-form">
+                    <div class="quiz-question" data-question="1">
+                        <h5>1. What must you ALWAYS wear in the workshop?</h5>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> Baseball cap</label>
+                            <label><input type="radio" name="q1" value="b"> Safety glasses</label>
+                            <label><input type="radio" name="q1" value="c"> Headphones</label>
+                        </div>
+                    </div>
+                    <div class="quiz-question" data-question="2">
+                        <h5>2. Which tool is used for precise measurements?</h5>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q2" value="a"> Hammer</label>
+                            <label><input type="radio" name="q2" value="b"> Screwdriver</label>
+                            <label><input type="radio" name="q2" value="c"> Calipers</label>
+                        </div>
+                    </div>
+                    <div class="quiz-question" data-question="3">
+                        <h5>3. What should you do before using any power tool?</h5>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q3" value="a"> Check for damage and get mentor supervision</label>
+                            <label><input type="radio" name="q3" value="b"> Use it immediately</label>
+                            <label><input type="radio" name="q3" value="c"> Clean it first</label>
+                        </div>
+                    </div>
+                    <div class="quiz-question" data-question="4">
+                        <h5>4. Which measurement tool is most accurate?</h5>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q4" value="a"> Ruler</label>
+                            <label><input type="radio" name="q4" value="b"> Tape measure</label>
+                            <label><input type="radio" name="q4" value="c"> Digital calipers</label>
+                        </div>
+                    </div>
+                    <div class="quiz-question" data-question="5">
+                        <h5>5. What type of shoes are required in the workshop?</h5>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q5" value="a"> Any shoes</label>
+                            <label><input type="radio" name="q5" value="b"> Closed-toe shoes</label>
+                            <label><input type="radio" name="q5" value="c"> Sandals are fine</label>
+                        </div>
+                    </div>
+                    <div class="quiz-question" data-question="6">
+                        <h5>6. What CAD software does Umoja Robotics use?</h5>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q6" value="a"> AutoCAD</label>
+                            <label><input type="radio" name="q6" value="b"> Onshape</label>
+                            <label><input type="radio" name="q6" value="c"> SketchUp</label>
+                        </div>
+                    </div>
+                    <div class="quiz-question" data-question="7">
+                        <h5>7. If you're unsure about a safety procedure, you should:</h5>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q7" value="a"> Guess and try it</label>
+                            <label><input type="radio" name="q7" value="b"> Ask a mentor</label>
+                            <label><input type="radio" name="q7" value="c"> Skip the activity</label>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="submit-week1-quiz">Submit Answers</button>
+                </form>
+                <div id="week1-quiz-score" style="margin-top: 20px; font-weight: bold;"></div>
+            `;
+            // Add submit handler
+            setTimeout(function() {
+                const submitBtn = document.getElementById('submit-week1-quiz');
+                if (submitBtn) {
+                    submitBtn.onclick = function() {
+                        let correct = 0;
+                        const answers = ['b','c','a','c','b','b','b'];
+                        for (let i = 1; i <= 7; i++) {
+                            const selected = document.querySelector('input[name="q'+i+'"]:checked');
+                            if (selected && selected.value === answers[i-1]) correct++;
+                        }
+                        const percentage = Math.round((correct/7)*100);
+                        let message = '';
+                        if (percentage >= 80) message = 'Excellent work!';
+                        else if (percentage >= 60) message = 'Good job!';
+                        else message = 'Keep studying!';
+                        document.getElementById('week1-quiz-score').innerHTML = `Score: ${correct}/7 (${percentage}%) - ${message}`;
+                    };
+                }
+            }, 100);
         }
-        
-        console.log('Setting modal display to block');
-        modal.style.display = 'block';
-        console.log('Modal display style:', modal.style.display);
-        
-        updateQuizProgress(1, 7); // Start with question 1 of 7
-        console.log('Quiz modal should now be visible');
-    } else {
-        console.error('Missing elements - modal:', modal, 'title:', quizTitle, 'content:', quizContent);
     }
 }
 
