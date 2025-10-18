@@ -2570,20 +2570,33 @@ function startQuiz(quizNumber) {
 }
 
 function openQuizModal(quizNumber) {
+    console.log('openQuizModal called with:', quizNumber);
     const modal = document.getElementById('quiz-modal');
     const quizTitle = document.getElementById('quiz-title');
     const quizContent = document.getElementById('quiz-content');
+    
+    console.log('Modal element:', modal);
+    console.log('Quiz title element:', quizTitle);
+    console.log('Quiz content element:', quizContent);
     
     if (modal && quizTitle && quizContent) {
         quizTitle.textContent = `Week ${quizNumber} Quiz`;
         
         // Sample quiz content for Week 1
         if (quizNumber === 1) {
-            quizContent.innerHTML = getWeek1QuizContent();
+            const content = getWeek1QuizContent();
+            console.log('Quiz content generated, length:', content.length);
+            quizContent.innerHTML = content;
         }
         
+        console.log('Setting modal display to block');
         modal.style.display = 'block';
+        console.log('Modal display style:', modal.style.display);
+        
         updateQuizProgress(1, 7); // Start with question 1 of 7
+        console.log('Quiz modal should now be visible');
+    } else {
+        console.error('Missing elements - modal:', modal, 'title:', quizTitle, 'content:', quizContent);
     }
 }
 
@@ -2760,13 +2773,18 @@ function closeQuiz() {
 }
 
 function enableQuiz1() {
+    console.log('enableQuiz1 called');
     const quiz1Btn = document.getElementById('quiz1-btn');
     const quiz1Status = document.getElementById('quiz1-status');
     
+    console.log('Quiz button element:', quiz1Btn);
+    
     if (quiz1Btn) {
         quiz1Btn.disabled = false;
+        quiz1Btn.removeAttribute('disabled');
         quiz1Btn.textContent = 'Start Quiz';
         quiz1Btn.className = 'btn btn-primary';
+        console.log('Button enabled, disabled attribute:', quiz1Btn.disabled);
     }
     
     if (quiz1Status) {
