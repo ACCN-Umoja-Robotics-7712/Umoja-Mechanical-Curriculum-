@@ -2553,6 +2553,7 @@ function openBasicToolsVideo() {
 
 // Quiz functionality
 function startQuiz(quizNumber) {
+    alert('Button clicked! Quiz number: ' + quizNumber);
     console.log('startQuiz called with quiz number:', quizNumber);
     console.log('Current student:', currentStudent);
     
@@ -2562,6 +2563,7 @@ function startQuiz(quizNumber) {
     }
     
     if (quizNumber === 1) {
+        alert('About to open Week 1 quiz modal...');
         console.log('Opening Week 1 quiz...');
         openQuizModal(quizNumber);
     } else {
