@@ -943,72 +943,72 @@ const lessonData = {
                             <div class="quiz-question" data-question="3">
                                 <h5>3. Which tool is best for measuring distances over 12 inches?</h5>
                                 <div class="quiz-options">
-                                    <div class="quiz-option" data-correct="false">A) Ruler</div>
-                                    <div class="quiz-option" data-correct="true">B) Tape measure</div>
-                                    <div class="quiz-option" data-correct="false">C) Calipers</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) Ruler</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">B) Tape measure</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">C) Calipers</div>
                                 </div>
                             </div>
                             
                             <div class="quiz-question" data-question="4">
                                 <h5>4. What should you do before using any tool?</h5>
                                 <div class="quiz-options">
-                                    <div class="quiz-option" data-correct="true">A) Inspect it for damage</div>
-                                    <div class="quiz-option" data-correct="false">B) Use it immediately</div>
-                                    <div class="quiz-option" data-correct="false">C) Clean it first</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">A) Inspect it for damage</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">B) Use it immediately</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">C) Clean it first</div>
                                 </div>
                             </div>
                             
                             <div class="quiz-question" data-question="5">
                                 <h5>5. What is the maximum safe lifting weight for students?</h5>
                                 <div class="quiz-options">
-                                    <div class="quiz-option" data-correct="false">A) 50 lbs</div>
-                                    <div class="quiz-option" data-correct="true">B) 25 lbs</div>
-                                    <div class="quiz-option" data-correct="false">C) 100 lbs</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) 50 lbs</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">B) 25 lbs</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">C) 100 lbs</div>
                                 </div>
                             </div>
                             
                             <div class="quiz-question" data-question="6">
                                 <h5>6. Which type of footwear is required in the workshop?</h5>
                                 <div class="quiz-options">
-                                    <div class="quiz-option" data-correct="false">A) Sandals</div>
-                                    <div class="quiz-option" data-correct="false">B) Open-toe shoes</div>
-                                    <div class="quiz-option" data-correct="true">C) Closed-toe shoes</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) Sandals</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">B) Open-toe shoes</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">C) Closed-toe shoes</div>
                                 </div>
                             </div>
                             
                             <div class="quiz-question" data-question="7">
                                 <h5>7. What should you do if you see an unsafe condition?</h5>
                                 <div class="quiz-options">
-                                    <div class="quiz-option" data-correct="false">A) Ignore it</div>
-                                    <div class="quiz-option" data-correct="true">B) Report it immediately</div>
-                                    <div class="quiz-option" data-correct="false">C) Fix it yourself</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) Ignore it</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">B) Report it immediately</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">C) Fix it yourself</div>
                                 </div>
                             </div>
                             
                             <div class="quiz-question" data-question="8">
                                 <h5>8. Which tool is most precise for small measurements?</h5>
                                 <div class="quiz-options">
-                                    <div class="quiz-option" data-correct="false">A) Tape measure</div>
-                                    <div class="quiz-option" data-correct="false">B) Ruler</div>
-                                    <div class="quiz-option" data-correct="true">C) Calipers</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) Tape measure</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">B) Ruler</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">C) Calipers</div>
                                 </div>
                             </div>
                             
                             <div class="quiz-question" data-question="9">
                                 <h5>9. What must every robot have for safety?</h5>
                                 <div class="quiz-options">
-                                    <div class="quiz-option" data-correct="false">A) Bright colors</div>
-                                    <div class="quiz-option" data-correct="true">B) Emergency stop button</div>
-                                    <div class="quiz-option" data-correct="false">C) Warning labels</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) Bright colors</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">B) Emergency stop button</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">C) Warning labels</div>
                                 </div>
                             </div>
                             
                             <div class="quiz-question" data-question="10">
                                 <h5>10. When should you wear headphones in the workshop?</h5>
                                 <div class="quiz-options">
-                                    <div class="quiz-option" data-correct="false">A) During machine operation</div>
-                                    <div class="quiz-option" data-correct="false">B) When working with tools</div>
-                                    <div class="quiz-option" data-correct="true">C) Never during workshop activities</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">A) During machine operation</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, false)" data-correct="false">B) When working with tools</div>
+                                    <div class="quiz-option" onclick="selectQuizOption(this, true)" data-correct="true">C) Never during workshop activities</div>
                                 </div>
                             </div>
                         </div>
@@ -2553,13 +2553,16 @@ function openBasicToolsVideo() {
 
 // Quiz functionality
 function startQuiz(quizNumber) {
+    console.log('startQuiz called with quiz number:', quizNumber);
+    console.log('Current student:', currentStudent);
+    
+    if (!currentStudent) {
+        alert('Please sign in first to take quizzes.');
+        return;
+    }
+    
     if (quizNumber === 1) {
-        // Check if Week 1 is completed
-        const week1Completed = completedLessons.includes(1);
-        if (!week1Completed) {
-            alert('Please complete Week 1 lesson before taking the quiz.');
-            return;
-        }
+        console.log('Opening Week 1 quiz...');
         openQuizModal(quizNumber);
     } else {
         alert(`Quiz ${quizNumber} will be available after completing Week ${quizNumber} lesson.`);
